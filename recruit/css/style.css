@@ -1960,3 +1960,53 @@ body.rwd .btn-white, body.rwd .btn-dark, body.rwd .btn-yellow { max-width: 100%;
 @media (max-width: 767px) {
   body.rwd .top-hero .hero-cta { width: 90px; height: 90px; font-size: 11.5px; line-height: 1.2; }
 }
+
+/* ============================================================
+   スマホ崩れ修正（追補）：固定幅box流動化＋各セクションのSP最適化
+   ============================================================ */
+/* 未流動だった固定幅 boxを流動化（PCはmin()で原寸維持） */
+body.rwd .voice-box                 { width: min(872px, 92vw); }
+body.rwd .about-access .access-head { width: min(1000px, 92vw); }
+body.rwd .recruit-persona .persona, body.rwd .persona-card { max-width: 92vw; }
+
+@media (max-width: 767px) {
+  /* リアルボイス（社員の声）*/
+  body.rwd .voice-box { padding: 30px 16px 38px; border-radius: 16px; }
+  body.rwd .voice-q { margin-top: 44px; }
+  body.rwd .voice-q .q-head { gap: 12px; align-items: flex-start; }
+  body.rwd .voice-q .q-circle { width: 56px; height: 56px; font-size: 20px; }
+  body.rwd .voice-q .q-text { font-size: 15.5px; line-height: 1.6; }
+  body.rwd .voice-bar { height: 44px; }
+  body.rwd .voice-bar .fill { font-size: 14px; padding-left: 14px; }
+  body.rwd .voice-ans { flex-direction: column; align-items: flex-start; padding: 18px; gap: 12px; }
+  body.rwd .voice-ans .avatar { width: 76px; height: 76px; }
+
+  /* WORK PROCESS の番号：画像右上に重ねて必ず表示（左581px等で画面外になる問題を解消）*/
+  body.rwd .process-item .pi-num,
+  body.rwd .process-item:not(.reverse) .pi-num,
+  body.rwd .process-item.reverse .pi-num {
+    left: auto; right: 10px; top: -4px; transform: none; font-size: 64px;
+  }
+
+  /* 代表メッセージ写真：上下を切らず（高さフル）左右のみトリミング */
+  body.rwd .about-message .message-bg {
+    width: auto; height: 100%; max-width: none;
+    left: 50%; right: auto; transform: translateX(-50%);
+    object-fit: cover;
+  }
+
+  /* INTERVIEW carousel（6人）：カード幅・画像高さを縮小し見切れ軽減 */
+  body.rwd .carousel-wrap { height: auto; }
+  body.rwd .carousel { gap: 14px; align-items: stretch; }
+  body.rwd .iv-card { flex: 0 0 68vw; }
+  body.rwd .iv-card img,
+  body.rwd .iv-card.featured img { height: 58vw; }
+
+  /* 各セクション：左右に最低限の余白（文字が端に付かないように）*/
+  body.rwd .top-message,
+  body.rwd .top-numbers,
+  body.rwd .work-job,
+  body.rwd .work-env,
+  body.rwd .people-voice,
+  body.rwd .recruit-persona { padding-left: 16px; padding-right: 16px; }
+}
