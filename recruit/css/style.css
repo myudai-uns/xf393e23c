@@ -1890,3 +1890,68 @@ body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: transla
   body.rwd .footer-col   { min-width: 42%; }
   body.rwd .footer-sns   { gap: 14px; }
 }
+
+/* ============================================================
+   レスポンシブ：全ページ共通＋各ページ固有セクション（body.rwd）
+   PC（≥993px）原デザイン ／ タブレット（≤992px）／ スマホ（≤767px）
+   ============================================================ */
+/* 固定幅コンテナの流動化（PC幅では min() により原寸維持＝無変化） */
+body.rwd .container            { width: min(920px, 92vw); }
+body.rwd .container-wide       { width: min(1000px, 92vw); }
+body.rwd .about-overview .container-wide { width: min(839px, 92vw); }
+body.rwd .numbers-grid         { width: min(868px, 92vw); }
+body.rwd .env-item             { width: min(872px, 92vw); }
+body.rwd .recruit-req .req-inner,
+body.rwd .entry-form .form-inner { width: min(840px, 92vw); }
+body.rwd .faq-list             { width: min(800px, 92vw); }
+body.rwd .btn-white, body.rwd .btn-dark, body.rwd .btn-yellow { max-width: 100%; }
+
+/* ===================== タブレット（≤992px）===================== */
+@media (max-width: 992px) {
+  body.rwd .sec-title { font-size: 36px; }
+  /* TOP */
+  body.rwd .top-work .work-flow { flex-wrap: wrap; gap: 20px 12px; }
+  /* about */
+  body.rwd .vision-circles { flex-wrap: wrap; gap: 28px; }
+  body.rwd .message-inner { width: 88vw; margin-left: 6vw; }
+  /* work：2カラム→縦積み、画像フル幅 */
+  body.rwd .work-process { padding-left: 24px; padding-right: 24px; }
+  body.rwd .process-item, body.rwd .process-item.reverse { flex-direction: column; }
+  body.rwd .process-item .pi-img { width: 100%; }
+  body.rwd .process-item .pi-body { margin: 22px 0 0; padding: 0; }
+  body.rwd .job-grid { width: min(1000px, 92vw); grid-template-columns: repeat(2, 1fr); }
+  body.rwd .env-item, body.rwd .env-item.reverse { flex-direction: column; gap: 20px; }
+  body.rwd .env-item .env-img { width: 100%; }
+  /* entry */
+  body.rwd .steps-row { gap: 48px; }
+}
+
+/* ===================== スマホ（≤767px）===================== */
+@media (max-width: 767px) {
+  body.rwd .sec-title { font-size: 27px; }
+  body.rwd .sec-title .sub { font-size: 12.5px; }
+  /* TOP */
+  body.rwd .top-message .lines { font-size: 14px; }
+  body.rwd .top-work .work-item { width: 100%; max-width: 320px; }
+  body.rwd .top-work .work-arrow { transform: rotate(90deg); margin: 4px 0; }
+  body.rwd .numbers-grid { grid-template-columns: repeat(2, 1fr); gap: 16px; }
+  body.rwd .carousel { gap: 16px; }
+  /* about */
+  body.rwd .vision-circles { flex-direction: column; align-items: center; }
+  body.rwd .overview-flex { flex-direction: column; }
+  body.rwd .overview-photo { width: 100%; margin: 16px 0 0; }
+  body.rwd .overview-photo img { height: auto; }
+  body.rwd .overview-table { margin-top: 4px; }
+  body.rwd .history-item { padding-left: 38px; }
+  body.rwd .access-map iframe { height: 340px; }
+  body.rwd .message-inner { width: 90vw; margin-left: 5vw; }
+  /* work */
+  body.rwd .job-grid { grid-template-columns: 1fr; }
+  /* recruit */
+  body.rwd .recruit-steps { flex-wrap: wrap; gap: 14px; }
+  /* entry：ステップ詰め・フォーム縦積み */
+  body.rwd .steps-row { gap: 22px; }
+  body.rwd .form-row { flex-direction: column; align-items: stretch; gap: 4px; }
+  body.rwd .form-row .f-label { width: auto; }
+  body.rwd .mynavi-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
