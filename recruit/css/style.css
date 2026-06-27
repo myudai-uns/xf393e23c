@@ -1800,3 +1800,93 @@ ul, ol { list-style: none; }
   font-weight: 700;
   letter-spacing: .04em;
 }
+
+/* ============================================================
+   レスポンシブ対応（people01 専用 = body.rwd）
+   PC（≥993px）= 原デザイン ／ タブレット（768-992px）／ スマホ（≤767px）
+   ※他ページは <meta viewport width=1206> 固定のため、以下は people01 のみ作用
+   ============================================================ */
+body.rwd { min-width: 0; overflow-x: hidden; }
+body.rwd .iv-body .iv-paras,
+body.rwd .iv-body .iv-photo { width: 100%; max-width: 840px; }
+
+/* ハンバーガー（既定＝PC/タブレットでは非表示） */
+body.rwd .nav-toggle {
+  display: none;
+  flex-direction: column; justify-content: center; gap: 5px;
+  width: 40px; height: var(--header-h);
+  margin-left: auto; margin-right: 14px;
+  cursor: pointer;
+}
+body.rwd .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; transition: transform .3s, opacity .3s; }
+body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(2) { opacity: 0; }
+body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* ===================== タブレット（≤992px）===================== */
+@media (max-width: 992px) {
+  body.rwd { --header-h: 76px; }
+  body.rwd .header-logo img { height: 54px; }
+  body.rwd .header-site { font-size: 16px; }
+  body.rwd .header-nav a { font-size: 12.5px; padding: 0 11px; }
+  body.rwd .header-entry { width: 96px; font-size: 14px; }
+
+  body.rwd .iv-body { padding-left: 40px; padding-right: 40px; }
+  body.rwd .iv-body .iv-paras,
+  body.rwd .iv-body .iv-photo { max-width: 92%; }
+  body.rwd .iv-body .iv-headline   { font-size: 26px; }
+  body.rwd .iv-body .iv-name       { flex-wrap: wrap; gap: 6px 14px; }
+  body.rwd .iv-body .iv-name .name { font-size: 27px; }
+  body.rwd .iv-body .iv-name .role { font-size: 19px; }
+  body.rwd .iv-body .iv-paras p    { font-size: 15px; }
+  body.rwd .iv-body .iv-sub        { font-size: 26px; }
+  body.rwd .page-hero .hero-title .en { font-size: 40px; }
+
+  body.rwd .footer-inner { width: 92vw; flex-wrap: wrap; gap: 24px 32px; }
+  body.rwd .footer-logo  { width: 220px; }
+  body.rwd .footer-nav   { flex-wrap: wrap; row-gap: 20px; }
+}
+
+/* ===================== スマホ（≤767px）= 1カラム＋ドロワー ===================== */
+@media (max-width: 767px) {
+  body.rwd { --header-h: 56px; }
+  body.rwd .header-left { padding-left: 14px; gap: 8px; }
+  body.rwd .header-logo img { height: 34px; }
+  body.rwd .header-site { display: none; }
+  body.rwd .header-entry { width: 58px; font-size: 10.5px; letter-spacing: .06em; }
+
+  /* ハンバーガー表示＋ナビをドロワー化 */
+  body.rwd .nav-toggle { display: flex; }
+  body.rwd .header-nav {
+    position: fixed; top: var(--header-h); right: 0;
+    width: min(72vw, 264px);
+    flex-direction: column; align-items: stretch; gap: 0;
+    background: var(--c-dark);
+    padding: 6px 0;
+    transform: translateX(110%); transition: transform .3s ease;
+    box-shadow: -6px 8px 24px rgba(0,0,0,.45); z-index: 99;
+  }
+  body.rwd #navToggle:checked ~ .header-nav { transform: translateX(0); }
+  body.rwd .header-nav a { font-size: 15px; padding: 14px 22px; width: 100%; }
+  body.rwd .header-nav .sep { display: none; }
+
+  /* 本文：1カラム・余白小・フォント縮小・両端揃え解除 */
+  body.rwd .iv-body { padding: 36px 18px 90px; }
+  body.rwd .iv-body .iv-paras,
+  body.rwd .iv-body .iv-photo { max-width: 100%; margin-top: 26px; }
+  body.rwd .iv-body .iv-headline   { font-size: 20px; line-height: 1.7; }
+  body.rwd .iv-body .iv-name       { flex-wrap: wrap; gap: 4px 12px; margin-top: 14px; }
+  body.rwd .iv-body .iv-name .name { font-size: 23px; }
+  body.rwd .iv-body .iv-name .role { font-size: 13.5px; }
+  body.rwd .iv-body .iv-paras p    { font-size: 14px; line-height: 1.85; text-align: left; }
+  body.rwd .iv-body .iv-sub        { font-size: 20px; margin-top: 48px; }
+  body.rwd .page-hero .hero-title .en { font-size: 30px; }
+  body.rwd .page-hero .hero-title .ja { font-size: 13px; }
+
+  /* フッター：縦積み */
+  body.rwd .footer-inner { flex-direction: column; align-items: flex-start; width: 88vw; gap: 22px; }
+  body.rwd .footer-logo  { width: 200px; }
+  body.rwd .footer-nav   { flex-wrap: wrap; row-gap: 18px; column-gap: 24px; }
+  body.rwd .footer-col   { min-width: 42%; }
+  body.rwd .footer-sns   { gap: 14px; }
+}
