@@ -2080,8 +2080,7 @@ body.rwd .recruit-entry-btn a { width: min(645px, 90vw); }
    スマホ：FV簡素化＋OUR WORK縦動線（自律改善）
    ============================================================ */
 @media (max-width: 767px) {
-  /* FV：自動スクロールを止め、静かに（ページスクロールで見る）。列はcoverで充填済 */
-  body.rwd .top-hero .track { animation: none !important; transform: none !important; }
+  /* FV：列は上下に自動スクロール（coverで充填済）。高さは抑えめ */
   body.rwd .top-hero { height: 64vh; }
 
   /* OUR WORK：3工程を縦積み＋矢印を下向きに */
@@ -2119,3 +2118,14 @@ body.rwd .recruit-entry-btn a { width: min(645px, 90vw); }
   /* people インタビュー6枚を正方形に（並びは1列のまま）*/
   body.rwd .pc-card img { aspect-ratio: 1 / 1; height: auto; }
 }
+
+/* フッター：通常（企業）サイトマップ行 */
+.footer-corp {
+  display: flex; flex-wrap: wrap; justify-content: center; align-items: center;
+  gap: 8px 18px;
+  width: min(900px, 90vw); margin: 26px auto 0; padding: 20px 8px 0;
+  border-top: 1px solid rgba(255,255,255,.22);
+}
+.footer-corp .fc-head { font-family: var(--font-din); font-size: 12px; letter-spacing: .12em; color: rgba(255,255,255,.6); }
+.footer-corp a { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
+.footer-corp a:hover { opacity: .7; }
