@@ -44,3 +44,7 @@ body#module {}
 @media only screen and (max-width: 768px){
   body#product .img:has(.img_product){ transform: scale(.9); transform-origin: center top; }
 }
+
+/* AISIN: フッター項目の間隔を確保（くっつき解消） */
+#footer .footList li { margin: 6px 26px 10px 0 !important; }
+#footer .snsList { gap: 14px; }
