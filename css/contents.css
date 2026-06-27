@@ -1,0 +1,936 @@
+@charset "utf-8";
+
+/* contents
+========================================================================== */
+
+#contents {
+	width: 1080px;
+	margin: 0 auto;
+	padding: 0 40px 100px;
+	zoom: 1;
+}
+#contents:after {
+	content:"";
+	display: block;
+	clear: both;
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#contents{
+		width: 90%;
+		padding: 0 5% 50px;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#contents {
+		width: 100%;
+		padding: 0 0 0;
+		margin-bottom: -20px;
+	}
+
+	body.open #contents {
+		opacity: .4;
+	}
+}
+
+
+/* title
+========================================================================== */
+
+#title h1 {
+	padding: 1.5em 0 1.5em;
+	font-weight: 700;
+	font-size: 308%;
+	text-align: center;
+	line-height: 1;
+}
+#title h1 span {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	color: #6cb130;
+	font-size: 50%;
+}
+
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#title h1 {
+		font-size: 200%;
+	}
+}
+
+
+
+
+/* main
+========================================================================== */
+
+/* layout
+-------------------------------------------------------------------------- */
+
+#main {
+	width: 780px;
+	text-align: left;
+	float: left;
+	zoom: 1;
+}
+#main:after {
+	content:"";
+	display: block;
+	clear: both;
+}
+
+#main > *:last-child,
+#main > *:last-child > *:last-child,
+#main > *:last-child > *:last-child > *:last-child,
+#main > *:last-child > *:last-child > *:last-child > *:last-child {
+	margin-bottom: 0 !important;
+}
+
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#main {
+		width: 70%;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main {
+		width: 90%;
+		padding: 0 5% 50px;
+		float: none;
+	}
+}
+
+
+/* anchor
+-------------------------------------------------------------------------- */
+
+#main a {
+	color: #6cb130;
+}
+#main a:hover {
+	text-decoration: underline;
+}
+
+
+/* icon
+-------------------------------------------------------------------------- */
+#main a[href^="http"]:after {
+	content: "\f08e";
+	color: #999;
+}
+
+#main a[href$="pdf"]:after,
+#main a[href$="doc"]:after,
+#main a[href$="docx"]:after,
+#main a[href$="xls"]:after,
+#main a[href$="xlsx"]:after,
+#main a[href$="ppt"]:after,
+#main a[href$="pptx"]:after,
+#main a[href^="http"]:after,
+#main a[href^="mailto:"]:after {
+	width: 1em;
+	margin: 0 .25em;
+	font-family: FontAwesome;
+	text-align: center;
+	display: inline-block;
+}
+
+#main a[href$="pdf"]:after {
+	content: "\f1c1";
+	color: #e1462a;
+}
+
+#main a[href$="doc"]:after,
+#main a[href$="docx"]:after {
+	content: "\f1c2";
+	color: #00178f;
+}
+#main a[href$="xls"]:after,
+#main a[href$="xlsx"]:after {
+	content: "\f1c3";
+	color: #007133;
+}
+#main a[href$="ppt"]:after,
+#main a[href$="pptx"]:after {
+	content: "\f1c4";
+	color: #dd5800;
+}
+
+
+#main a[href^="mailto:"]:after {
+	content: "\f003";
+	color: #666;
+}
+
+#main a.no-icon:after {
+	display: none !important;
+}
+
+
+/* headline
+-------------------------------------------------------------------------- */
+
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+	font-weight: 500;
+	line-height: 1.5;
+}
+
+
+
+#main h2 {
+	margin: 2em 0 1em;
+	padding: .25em 0;
+	font-size: 231%;
+	border-bottom: 3px solid #2e5b5f;
+}
+
+#main h2 span.title {
+	padding: .25em 0;
+	border-bottom: 3px solid #6cb130;
+}
+
+#main h2 span.title span.en {
+	padding-left: .5em;
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	font-size: 80%;
+	color: #ccc;
+}
+
+#main h2.message {
+	font-family: 'Noto Serif JP', serif;
+	border-bottom: none;
+}
+
+#main h2:first-child {
+	margin-top: 0;
+}
+
+#main h3 {
+	margin: 2em 0 .75em;
+	color: #2e5b5f;
+	font-size: 192%;
+}
+
+#main h3.factory {
+	margin: 2em 0 .75em;
+	font-family: 'Noto Serif JP', serif;
+}
+
+#main h4 {
+	margin: 1.5em 0 .75em;
+	font-size: 129%;
+}
+
+#main h5 {
+	margin: 1.5em 0 .5em;
+	font-size: 115%;
+}
+
+#main h6 {
+	margin: 1.5em 0 .5em;
+	font-size: 108%;
+}
+
+#main h2 + h3,
+#main h3 + h4,
+#main h4 + h5,
+#main h5 + h6 {
+	margin-top: 0;
+}
+
+
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main h1 {
+		font-size: 154%;
+	}
+	#main h2 {
+		font-size: 139%;
+	}
+	#main h3 {
+		font-size: 124%;
+	}
+	#main h4 {
+		font-size: 116%;
+	}
+	#main h5 {
+		font-size: 108%;
+	}
+	#main h6 {
+		font-size: 100%;
+	}
+}
+
+
+/* body copy
+-------------------------------------------------------------------------- */
+
+#main p {
+	margin-bottom: 1em;
+	line-height: 1.8;
+}
+
+#main p.preparation {
+	padding: 100px 0;
+	text-align: center;
+}
+
+#main p.indent {
+	margin: 0 0 .5em 1.5em;
+	text-indent: -1.5em;
+}
+
+
+/* image
+-------------------------------------------------------------------------- */
+
+#main div.img {
+	width: 100%;
+	margin: 2em 0;
+	text-align: center;
+	position: relative;
+}
+
+#main div.img img {
+	display: inline;
+}
+#main div.img p {
+	margin-bottom: 0;
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#main article img {
+		max-width: 720px;
+		object-fit: contain;
+	}
+	#main div.img img {
+		width: 100%;
+		max-width: 720px;
+	}
+}
+
+/* mobile */
+@media only screen and (max-width: 767px) {
+	#main article img {
+		max-width: 320px;
+		object-fit: contain;
+	}
+	#main div.img img {
+		width: 100%;
+		max-width: 320px;
+	}
+}
+
+
+/* image (right)
+-------------------------------------------------------------------------- */
+
+#main div.img_right {
+	margin: 0 0 1em 2em;
+	text-align: center;
+	float: right;
+}
+#main div.img_right p {
+	margin-bottom: 0;
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#main div.img_right img {
+		max-width: 240px;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main div.img_right {
+		margin: 2em 0;
+		float: none;
+	}
+	#main div.img_right img {
+		width: 100%;
+		max-width: 320px;
+	}
+}
+
+
+/* image (left)
+-------------------------------------------------------------------------- */
+
+#main div.img_left {
+	margin: 0 2em 1em 0;
+	text-align: center;
+	float: left;
+}
+#main div.img_left p {
+	margin-bottom: 0;
+}
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#main div.img_left img {
+		max-width: 240px;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main div.img_left {
+		margin: 2em 0;
+		float: none;
+	}
+	#main div.img_left img {
+		width: 100%;
+		max-width: 320px;
+	}
+}
+
+
+/* list (ul)
+-------------------------------------------------------------------------- */
+
+#main ul {
+	margin-bottom: 1em;
+}
+
+#main ul li {
+	margin: 0 0 .5em 1.5em;
+	list-style: disc;
+}
+
+#main ul li ul {
+	margin: .5em 0;
+}
+
+#main ul li ul li {
+	list-style: circle;
+}
+
+#main ul li ol {
+	margin: .5em 0;
+	padding-left: 0;
+}
+#main ul li ol li {
+	list-style: decimal;
+}
+
+
+/* list (link)
+-------------------------------------------------------------------------- */
+
+#main ul.list_link li {
+	margin: 0 0 .5em 1em;
+	list-style: none;
+	position: relative;
+}
+
+#main ul.list_link li:before {
+	width: 1.25em;
+	content: "\f138";
+	font-family: FontAwesome;
+	font-size: 100%;
+	display: inline-block;
+	position: absolute;
+	top: 0;
+	left: -1em;
+}
+
+#main ul.list_link li ul li {
+	list-style: none;
+}
+
+#main ul.list_link li ul li:before {
+	content: "\f138";
+}
+
+
+/* list (ol)
+-------------------------------------------------------------------------- */
+
+#main ol {
+	margin-bottom: 1em;
+	padding-left: 1.5em;
+}
+
+#main ol li {
+	margin-bottom: .5em;
+}
+
+#main ol li ul {
+	margin: .5em 0;
+}
+#main ol li ol {
+	margin: .5em 0;
+	padding-left: 1.5em;
+}
+
+
+/* list (dl)
+-------------------------------------------------------------------------- */
+
+#main dl {
+	margin-bottom: 1em;
+}
+
+#main dl dt {
+	margin-bottom: .5em;
+	font-weight: bold;
+}
+#main dl dd {
+	margin-bottom: 1em;
+}
+#main dl dd:last-child {
+	margin-bottom: 0;
+}
+
+
+/* list (table)
+-------------------------------------------------------------------------- */
+
+#main dl.list_table dt {
+	margin-bottom: 0;
+	padding: .75em 0 .75em 1em;
+	float: left;
+	clear: both;
+}
+
+#main dl.list_table dd {
+	margin-bottom: 0;
+	padding: .75em 0 .75em 7em;
+	border-top: 1px dotted #ccc;
+}
+#main dl.list_table dd:last-child {
+	border-bottom: 1px dotted #ccc;
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main dl.list_table dt {
+		padding: .75em 0 0 1em;
+		border-top: 1px dotted #ccc;
+		float: none;
+	}
+
+	#main dl.list_table dd {
+		padding: .75em 0 .75em 1em;
+		border-top: none;
+	}
+	#main dl.list_table dd + dd {
+		padding: 0 0 .75em;
+	}
+}
+
+
+/* table
+-------------------------------------------------------------------------- */
+
+#main table {
+	width: 100%;
+	margin-bottom: 1em;
+}
+
+#main table th,
+#main table td {
+	padding: .75em;
+	border: 1px solid #ccc;
+	vertical-align: middle;
+}
+
+#main table th {
+	background: #edefec;
+	font-weight: bold;
+}
+
+#main table td *:last-child {
+	margin-bottom: 0;
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main div.table {
+	    width: auto;
+	    margin-bottom: 1em;
+	    padding: 15px;
+	    overflow-x: scroll;
+	    overflow-y: hidden;
+	    -webkit-overflow-scrolling: touch;
+	    -ms-overflow-style: -ms-autohiding-scrollbar;
+	    border: 1px solid #eee;
+	}
+
+	#main div.table table {
+		margin-bottom: 0;
+	}
+	#main div.table table th,
+	#main div.table table td {
+		white-space: nowrap;
+	}
+}
+
+
+/* note
+-------------------------------------------------------------------------- */
+
+#main p.note {
+	margin: 0 0 .5em 1em;
+	font-size: 86%;
+	line-height: 1.5;
+	text-indent: -1em;
+}
+
+#main dl.note {
+	font-size: 86%;
+	line-height: 1.5;
+}
+#main dl.note dt {
+	font-weight: normal;
+	float: left;
+}
+#main dl.note dd {
+	margin-bottom: .5em;
+	padding-left: 2.5em;
+}
+
+
+/* box
+-------------------------------------------------------------------------- */
+
+#main div.border,
+#main div.fill,
+#main div.fill_alert {
+	margin: 2em 0;
+	padding: 1em;
+}
+#main div.border *:last-child,
+#main div.fill *:last-child,
+#main div.fill_alert *:last-child {
+	margin-bottom: 0;
+}
+
+#main div.border {
+	border: 1px solid #ccc;
+}
+
+#main div.fill {
+	background: #f1f1f1;
+}
+
+#main div.fill_alert {
+	background: #f9e5e5;
+}
+
+
+/* line
+-------------------------------------------------------------------------- */
+
+#main hr.line {
+	margin-bottom: 1em;
+	border: 0;
+	border-top: 1px solid #ccc;
+	visibility: visible;
+}
+
+#main hr.dot {
+	margin-bottom: 1em;
+	border: 0;
+	border-top: 1px dotted #ccc;
+	visibility: visible;
+}
+
+
+/* button
+-------------------------------------------------------------------------- */
+
+#main div.btn {
+	margin: 3em 0;
+	text-align: center;
+}
+
+#main div.btn a {
+	width: 300px;
+	padding: 1em 0;
+	border: 1px solid #000;
+	color: #333;
+	display: inline-block;
+}
+#main div.btn a:hover {
+	background: #000;
+	color: #fff;
+	text-decoration: none;
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main div.btn a {
+		width: 100%;
+	}
+}
+
+
+/* pagination
+-------------------------------------------------------------------------- */
+
+#main nav.pagination {
+	margin-top: 50px;
+	text-align: center;
+}
+
+#main nav.pagination ul li {
+	margin: 0;
+	line-height: 1;
+	list-style: none;
+	display: inline-block;
+}
+
+#main nav.pagination ul li a {
+	padding: .5em .75em;
+	border: 1px solid #ccc;
+	display: block;
+}
+#main nav.pagination ul li a:hover,
+#main nav.pagination ul li a.current {
+	background: #ccc;
+	text-decoration: none;
+}
+
+
+
+
+
+/* sidebar
+========================================================================== */
+
+#sidebar {
+	width: 250px;
+	text-align: center;
+	float: right;
+}
+
+#sidebar:after {
+	content:"";
+	display: block;
+	clear: both;
+}
+
+#sidebar ul li a {
+	padding: 1em;
+	border-top: 1px solid #ccc;
+	display: block;
+	position: relative;
+}
+#sidebar ul li:last-child a {
+	border-bottom: 1px solid #ccc;
+}
+
+#sidebar ul li a.active,
+#sidebar ul li a:hover {
+	background: #eee;
+}
+
+#sidebar ul li a span {
+	font-family: 'Oswald', sans-serif;
+	font-weight: 300;
+	color: #6cb130;
+}
+
+#sidebar ul li a:after {
+	width: 1em;
+	margin-top: -.5em;
+	content: "\f105";
+	font-family: FontAwesome;
+	line-height: 1;
+	text-align: center;
+	color: #6cb130;
+	display: inline-block;
+	position: absolute;
+	top: 50%;
+	right: 1em;
+}
+
+
+
+/* tablets */
+@media only screen and (min-width: 768px) and (max-width: 959px) {
+	#sidebar {
+		width: 25%;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#sidebar {
+		width: auto;
+		margin: 0;
+		float: none;
+	}
+	#sidebar ul li a br {
+		display: none;
+	}
+	#sidebar ul li a span {
+		padding-left: .5em;
+	}
+}
+
+
+
+/* ========================================================================
+   UX Enhancement: Contents Area
+   ======================================================================== */
+
+/* --- Title section --- */
+#title h1 {
+	animation: titleIn .8s cubic-bezier(.19,1,.22,1) .1s both;
+}
+#title h1 span {
+	animation: titleIn .8s cubic-bezier(.19,1,.22,1) .3s both;
+}
+@keyframes titleIn {
+	from { opacity: 0; transform: translateY(20px); }
+	to { opacity: 1; transform: translateY(0); }
+}
+
+/* --- Heading underline animation --- */
+#main h2 {
+	position: relative;
+	overflow: hidden;
+}
+#main h2 span.title {
+	display: inline-block;
+}
+
+/* --- Image hover zoom --- */
+#main div.img {
+	overflow: hidden;
+}
+#main div.img > img:not(.img_product):not([class*="img_"]) {
+	transition: transform .6s cubic-bezier(.19,1,.22,1);
+}
+#main div.img:hover > img:not(.img_product):not([class*="img_"]) {
+	transform: scale(1.03);
+}
+
+/* --- Button animation --- */
+#main div.btn a {
+	position: relative;
+	overflow: hidden;
+	transition: background .4s, color .4s, box-shadow .4s, transform .3s;
+}
+#main div.btn a:hover {
+	transform: translateY(-2px);
+	box-shadow: 0 4px 15px rgba(0,0,0,.15);
+}
+#main div.btn a::before {
+	content: '';
+	position: absolute;
+	top: 0; left: -100%;
+	width: 100%; height: 100%;
+	background: linear-gradient(90deg, transparent, rgba(255,255,255,.15), transparent);
+	transition: left .5s;
+}
+#main div.btn a:hover::before {
+	left: 100%;
+}
+
+/* --- Table row hover --- */
+#main table tr {
+	transition: background .2s;
+}
+#main table tr:hover td {
+	background: #f0f4f0;
+}
+
+/* --- dl.list_table row hover --- */
+#main dl.list_table dd {
+	transition: background .2s;
+}
+#main dl.list_table dd:hover {
+	background: #f9faf7;
+}
+
+/* --- Sidebar link hover slide --- */
+#sidebar ul li a {
+	transition: background .3s, padding-left .3s, color .3s;
+	overflow: hidden;
+}
+#sidebar ul li a:hover {
+	padding-left: 1.5em;
+	background: #f0f4f0;
+	text-decoration: none;
+}
+#sidebar ul li a:after {
+	transition: right .3s, color .3s;
+}
+#sidebar ul li a:hover:after {
+	right: .7em;
+}
+#sidebar ul li a.active {
+	background: #2e5b5f;
+	color: #fff;
+	border-color: #2e5b5f;
+}
+#sidebar ul li a.active span {
+	color: #6cb130;
+}
+#sidebar ul li a.active:after {
+	color: #fff;
+}
+
+/* --- Company menu card hover --- */
+#main ul.company_menu li a {
+	transition: transform .4s, box-shadow .4s;
+}
+#main ul.company_menu li a:hover {
+	transform: scale(1.02);
+	box-shadow: 0 8px 25px rgba(0,0,0,.3);
+}
+
+/* --- Recruit menu card hover --- */
+#main ul.recruit_menu li a {
+	transition: border-color .3s, box-shadow .3s, transform .3s;
+}
+#main ul.recruit_menu li a:hover {
+	border-color: #6cb130;
+	box-shadow: 0 4px 15px rgba(0,0,0,.08);
+	transform: translateY(-3px);
+}
+
+/* --- Box (border/fill) subtle animation --- */
+#main div.border {
+	transition: border-color .3s, box-shadow .3s;
+}
+#main div.border:hover {
+	border-color: #6cb130;
+	box-shadow: 0 2px 10px rgba(108,177,48,.1);
+}
+
+/* --- History timeline animation --- */
+#main dl.list_table_history {
+	position: relative;
+}
+#main dl.list_table_history dt {
+	transition: color .3s;
+}
+#main dl.list_table_history dt:hover {
+	color: #6cb130;
+}
+#main dl.list_table_history dd {
+	transition: background .3s, padding-left .3s;
+}
+#main dl.list_table_history dd:hover {
+	background: #f9faf7;
+	padding-left: 2.5em;
+}

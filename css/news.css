@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+
+/* main
+-------------------------------------------------------------------------- */
+
+#main {
+	width: 100%;
+}
+
+/* Tablets */
+@media only screen and (min-width: 768px) and (max-width: 991px) {
+	#main {
+		width: 100%;
+	}
+}
+
+/* phones */
+@media only screen and (max-width: 767px) {
+	#main {
+		width: 90%;
+	}
+}

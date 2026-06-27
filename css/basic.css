@@ -1,0 +1,95 @@
+@charset "utf-8";
+
+/* normalize (scoped to .wrapper so v2 globalHeader/footer are not affected)
+========================================================================== */
+
+.wrapper section, .wrapper article, .wrapper div,
+.wrapper h1, .wrapper h2, .wrapper h3, .wrapper h4, .wrapper h5, .wrapper h6, .wrapper p,
+.wrapper ul, .wrapper ol, .wrapper li, .wrapper dl, .wrapper dt, .wrapper dd,
+.wrapper table, .wrapper th, .wrapper td,
+.wrapper form, .wrapper fieldset, .wrapper input, .wrapper textarea, .wrapper select, .wrapper option,
+.wrapper address, .wrapper blockquote, .wrapper del, .wrapper noscript, .wrapper img, .wrapper hr {
+	margin: 0;
+	padding: 0;
+	font-size: 100.01%;
+	font: inherit;
+	vertical-align: baseline;
+}
+
+.wrapper ul {
+	list-style: none;
+}
+
+.wrapper table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	border: 0;
+}
+
+.wrapper img {
+	border: 0;
+	line-height: 0;
+	vertical-align: middle;
+}
+
+.wrapper address {
+	font-style: normal;
+}
+
+.wrapper hr {
+	clear: both;
+}
+
+.wrapper sub, .wrapper sup {
+	font-size: 75%;
+	line-height: 0;
+	vertical-align: baseline;
+	position: relative;
+}
+.wrapper sup {
+	top: -0.5em;
+}
+.wrapper sub {
+	bottom: -0.25em;
+}
+
+
+
+/* basic
+========================================================================== */
+
+.wrapper {
+	color: #333;
+	font-size: 13px;
+	font-family: 'Noto Sans JP', sans-serif;
+	line-height: 1.5;
+	text-align: center;
+}
+
+
+
+/* text
+========================================================================== */
+
+.wrapper .color_red      { color: #c00; }
+
+.wrapper .text_center  { text-align: center !important; }
+.wrapper .text_right   { text-align: right !important; }
+.wrapper .text_left    { text-align: left !important; }
+.wrapper .text_justify { text-align: justify !important; }
+
+.wrapper .text_indent      { text-indent: 1em !important; }
+.wrapper .text_underline   { text-decoration: underline !important; }
+.wrapper .text_linethrough { text-decoration: line-through !important; }
+
+.wrapper .text_small { font-size: 86% !important; }
+.wrapper .text_large { font-size: 115% !important; }
+
+.wrapper .float_right { float: right !important; }
+.wrapper .float_left  { float: left !important; }
+.wrapper .clear       { clear: both !important; }
+
+/* Phones */
+@media only screen and (max-width: 767px) {
+	.wrapper .text_center  { text-align: left !important; }
+}

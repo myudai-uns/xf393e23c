@@ -1,0 +1,4056 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+/****************************************
+
+    Reset
+
+*****************************************/
+/* Reset Style */
+html {
+  font-size: 62.5%;
+  letter-spacing: 0.1em;
+  overflow: auto;
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, "游ゴシック体", "ヒラギノ角ゴ Pro W3", "メイリオ", sans-serif;
+  color: #000;
+}
+html, body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+body {
+  -webkit-text-size-adjust: 100%;
+}
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  margin: 0;
+  padding: 0;
+}
+address, caption, cite, code, dfn, em, strong, th, var {
+  font-style: normal;
+}
+figure {
+  margin: 0;
+}
+h1, h2, h3, h4, h5, h6 {
+  margin: 0;
+  padding: 0;
+}
+img {
+  margin: 0;
+  padding: 0;
+  vertical-align: bottom;
+}
+ol, ul {
+  list-style: none outside none;
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style-type: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+caption, th {
+  text-align: left;
+}
+q:before, q:after {
+  content: '';
+}
+img,
+object,
+embed {
+  vertical-align: top;
+}
+legend {
+  display: none;
+}
+h1, h2, h3, h4, h5, h6 {
+  font-size: 100%;
+}
+img, abbr, acronym, fieldset {
+  border: 0;
+}
+li {
+  list-style-type: none;
+}
+select, input, button, textarea {
+  font: 99% arial,helvetica,clean,sans-serif;
+}
+table {
+  font-size: inherit;
+  font: 100%;
+}
+pre, code, kbd, samp, tt {
+  font-family: monospace;
+  *font-size: 108%;
+  line-height: 100%;
+}
+area {
+  border: none;
+  outline: none;
+}
+em, strong {
+  font-weight: bold;
+}
+/****************************************
+
+    Link
+
+*****************************************/
+a {
+  outline: none;
+}
+a:link {
+  color: #3c71d4;
+  text-decoration: underline;
+}
+a:hover {
+  text-decoration: none;
+}
+a:visited {
+  color: #3c71d4;
+  text-decoration: none;
+}
+/* redLink */
+a.redLink:link {
+  color: #c81c24;
+  text-decoration: underline;
+}
+a.redLink:hover {
+  text-decoration: none;
+}
+a.redLink:visited {
+  color: #c81c24;
+  text-decoration: none;
+}
+/****************************************
+
+    clearfix
+
+*****************************************/
+.clearfix:after {
+  content: ".";
+  display: block;
+  height: 0;
+  clear: both;
+  visibility: hidden;
+}
+/****************************************
+
+    common
+
+*****************************************/
+body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+  font-size: 1.6rem;
+}
+.over {
+  display: inline-block;
+  opacity: 1;
+  -moz-transition: opacity 0.2s ease-in;
+  -o-transition: opacity 0.2s ease-in;
+  -webkit-transition: opacity 0.2s ease-in;
+  transition: opacity 0.2s ease-in;
+  text-decoration: none;
+}
+.over:hover {
+  opacity: 0.6;
+  text-decoration: none;
+}
+/* ---------------------------------------------------------------- *
+
+  コーディング規約参考：http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
+                        http://www.cyberagent.co.jp/recruit/techreport/report/
+
+----------------------------------------------------------------- */
+/*
+ * 共通
+ */
+.view-pc {
+  display: block;
+}
+.view-tb {
+  display: none;
+}
+.deviceTb .view-tb {
+  display: block;
+}
+.view-sp {
+  display: none;
+}
+.view-notsp {
+  display: block;
+}
+.view-nottb {
+  display: block;
+}
+.view-notpc {
+  display: none;
+}
+.deviceTb .view-notpc {
+  display: block;
+}
+.fixed {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+/* wrapper */
+.wrapper {
+  padding-top: 160px;
+  position: relative;
+}
+.mainContents {}
+  .mainContents .pageHeader {
+    width: 100%;
+    padding: 35px 0;
+    margin-bottom: 60px;
+    background: #f4f4f4;
+    transition: .3s;
+  }
+    .mainContents .pageHeader .pageTtl {
+      font-size: 3.6rem;
+      font-weight: bold;
+      line-height: 54px;
+      max-width: 940px;
+      padding: 0 50px;
+      margin: 0 auto;
+    }
+.mainContents .breadcrumb {
+  width: 100%;
+  padding: 10px 0;
+}
+  .mainContents .breadcrumb ul {
+    text-align: right;
+    max-width: 1100px;
+    padding: 0 50px;
+    margin: 0 auto;
+  }
+    .mainContents .breadcrumb ul li {
+      display: inline;
+      color: #006040;
+      font-size: 1.2rem;
+    }
+    .mainContents .breadcrumb ul li:before {
+      content: ">";
+      color: #d4e6dd;
+      margin: 0 8px;
+    }
+    .mainContents .breadcrumb ul li:first-child:before {
+      content: "";
+      margin: 0;
+    }
+      .mainContents .breadcrumb ul li a {
+        color: #808cb8;
+        text-decoration: none;
+      }
+.mainContents .baseBlock {
+  max-width: 940px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 50px;
+}
+  .mainContents .baseBlock p {
+    font-size: 1.6rem;
+    line-height: 1.9;
+  }
+  .mainContents .blockTtl {
+    color: #006040;
+    font-size: 2.6rem;
+    font-weight: bold;
+    line-height: 44px;
+    margin-bottom: 55px;
+  }
+#footer {
+  color: #fff;
+  width: 100%;
+  background: #333;
+  box-sizing: border-box;
+  position: relative;
+}
+  #footer #pageTop {
+    display: block;
+    width: 50px;
+    height: 50px;
+    position: fixed;
+    right: 35px;
+    bottom: 15%;
+    z-index: 10;
+    transition: .3s;
+    visibility: hidden;
+    opacity: 0;
+  }
+  #footer #pageTop.active {
+    visibility: visible;
+    opacity: 1;
+  }
+    #footer #pageTop a {
+      display: block;
+      text-indent: -9999px;
+      height: 100%;
+      background: url(../img/common/pagetop.svg) no-repeat center center / cover;
+    }
+  #footer .footTop {
+    max-width: 1100px;
+    padding: 85px 0 35px 0;
+    margin: 0 auto;
+  }
+    #footer .snsVox {
+      margin-bottom: 50px;
+    }
+      #footer .snsVox .snsTtl {
+        display: block;
+        color: #fff;
+        font-size: 1.8rem;
+        letter-spacing: .1em;
+        margin-bottom: 20px;
+      }
+      #footer .snsList {
+        display: flex;
+        justify-content: flex-start;
+      }
+        #footer .snsList li {
+          min-width: 36px;
+          margin-right: 40px;
+        }
+    #footer .footList {
+      letter-spacing: -.4em;
+    }
+      #footer .footList li {
+        display: inline-block;
+        letter-spacing: normal;
+        margin-right: 20px;
+      }
+        #footer .footList li a {
+          display: block;
+          color: #fff;
+          font-size: 1.2rem;
+          line-height: 1;
+          letter-spacing: 1px;
+          text-decoration: none;
+        }
+  #footer .footBottom {
+    background: #006040;
+  }
+    #footer .copyright {
+      display: block;
+      text-align: right;
+      color: #99a3c7;
+      font-size: 1.0rem;
+      letter-spacing: .4px;
+      max-width: 1100px;
+      padding: 5px 30px;
+      margin: 0 auto;
+    }
+.indexContent {
+  width: 100%;
+  margin-bottom: 50px;
+}
+  .indexContent .indexLead {
+    font-size: 1.4rem;
+    line-height: 2.0;
+    max-width: 960px;
+    padding: 0 50px;
+    margin: 0 auto 40px auto;
+  }
+  .indexContent .indexTile {
+    display: flex;
+    flex-wrap: wrap;
+    max-width: 960px;
+    margin: 0 auto;
+  }
+    .indexContent .indexTile .indexTileItem {
+      width: 320px;
+      padding-bottom: 30px;
+      margin-bottom: 15px;
+      position: relative;
+    }
+      .indexContent .indexTile .indexTileItem img {
+        max-width: 100%;
+      }
+      .indexContent .indexTile .indexTileItem a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        margin: 0 10px;
+        transition: .3s;
+      }
+      .indexContent .indexTile .indexTileItem a:hover {
+        opacity: 0.6;
+      }
+      .indexContent .indexTile .indexTileItem .pagename {
+        display: table;
+        font-size: 1.8rem;
+        font-weight: bold;
+        line-height: 1.3;
+        width: calc(100% - 40px);
+        margin-left: 20px;
+        background: #fff;
+        position: absolute;
+        bottom: 0;
+        left: 20px;
+      }
+      .indexContent .indexTile .indexTileItem .pagename > span {
+        display: table-cell;
+        vertical-align: middle;
+        padding: 18px;
+        position: relative;
+      }
+      .indexContent .indexTile .indexTileItem .pagename .sub {
+        font-size: 1.0rem;
+        letter-spacing: normal;
+      }
+.indexNews {
+  margin-bottom: 80px;
+}
+.indexNews .indexTile {
+  display: block;
+}
+  .indexNews .indexTile .blockTtl {
+    margin-bottom: 0;
+  }
+  .indexNews .indexTile .moreLink {
+    display: block;
+    max-width: 940px;
+    margin: 0 auto 15px auto;
+  }
+  .indexNews ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+    .indexNews ul li {
+      margin-bottom: 30px;
+      overflow: hidden;
+    }
+    .indexNews ul li:last-child {
+      margin-bottom: 0;
+    }
+      .indexNews ul li .date {
+        font-size: 1.4rem;
+        font-weight: bold;
+        text-align: left;
+        width: 90px;
+        float: left;
+        margin-right: 10px;
+      }
+      .indexNews ul li .category {
+        color: #fff;
+        font-size: 1.2rem;
+        text-align: center;
+        line-height: 1;
+        width: 110px;
+        float: left;
+        padding: 5px 0;
+        background: #333;
+      }
+      .indexNews ul li .title {
+        color: #333;
+        font-size: 1.4rem;
+        margin-left: 230px;
+      }
+        .indexNews ul li .title a {
+          color: #000;
+          text-decoration: none;
+        }
+        .indexNews ul li .icoPDF:after,
+        .indexNews ul li .linkPdf:after {
+          display: inline-block;
+          content: " ";
+          width: 18px;
+          height: 16px;
+          margin-left: 5px;
+          background: url(../img/common/ico_pdf.png) no-repeat left top / 18px 16px;
+          position: relative;
+          top: 2px;
+        }
+/* globalHeader */
+.globalHeader {
+  width: 100%;
+  height: 160px;
+  background: #fff;
+  position: fixed;
+  z-index: 100;
+}
+  .globalHeader #aisinLogo {
+    text-align: right;
+    width: 100%;
+    height: 45px;
+    padding: 10px 20px;
+    border-bottom: 1px solid #707070;
+    position: absolute;
+    top: 0;
+    left: 0;
+    box-sizing: border-box;
+  }
+    .globalHeader #aisinLogo img {
+      width: 125px;
+      vertical-align: middle;
+    }
+  .globalHeader .globalHeaderInner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    height: 100%;
+    padding: 45px 40px 0 40px;
+    position: relative;
+    box-sizing: border-box;
+  }
+  .globalHeader .logo {
+    line-height: 1;
+    width: 135px;
+    height: 26px;
+    margin-bottom: 40px;
+  }
+    .globalHeader .logo img {
+      width: 100%;
+      height: 100%;
+    }
+  .globalHeader .btnDrawer {
+    display: none;
+  }
+.drawerMenu {
+  width: calc(100% - 200px);
+  overflow: hidden;
+}
+  .drawerMenu .megaNav {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+  }
+  .drawerMenu .megaNav .searchBtn {
+    width: 30px;
+    margin-left: 20px;
+    margin-bottom: 10px;
+  }
+    .drawerMenu .megaNav .searchBtn a {
+      display: block;
+      padding: 5px;
+    }
+    .drawerMenu .megaNav .searchBtn img {
+      width: 20px;
+      vertical-align: middle;
+    }
+  .drawerMenu .megaNav .langBtn {
+    width: 30px;
+    margin-left: 10px;
+    margin-bottom: 10px;
+  }
+    .drawerMenu .megaNav .langBtn a {
+      display: block;
+      padding: 5px;
+    }
+    .drawerMenu .megaNav .langBtn img {
+      width: 20px;
+      vertical-align: middle;
+    }
+/* megaNavParent */
+.megaNavParent {
+  display: flex;
+  justify-content: flex-end;
+}
+  .megaNavParent > li {
+    line-height: 1;
+    font-size: 1.4rem;
+    margin: 0 5px;
+  }
+    .megaNavParent > li > a {
+      display: block;
+      color: #000;
+      letter-spacing: 1px;
+      text-decoration: none;
+      padding: 30px 10px 35px 10px;
+      position: relative;
+    }
+    .megaNavParent > li.tabDefault.tbWideActive > a,
+    .megaNavParent > li.tabDefault.tabActive > a,
+    .megaNavParent > li > a:hover {
+      color: #9fa0a0;
+    }
+    .megaNavParent > li > a.icoWin {
+      padding-right: 18px;
+      background: url("../img/common/ico_blank_black.png") no-repeat right 2.2em;
+    }
+/* megaNavSlide */
+.megaNavSlide {
+  color: #000;
+  width: 100%;
+  padding: 40px 0 50px 0;
+  background: #efefef;
+  visibility: hidden;
+  position: fixed;
+  top: 160px;
+  left: 0;
+  z-index: -1;
+  opacity: 0;
+  -webkit-transition: all .2s ease;
+  transition: all .2s ease;
+  box-sizing: border-box;
+}
+.megaNavParent > li:hover > .megaNavSlide {
+  visibility: visible;
+  opacity: 1;
+}
+.megaNavParent > li:hover li:hover > .megaNavSlide {
+  visibility: visible;
+  opacity: 1;
+}
+  .megaNavSlideInner {
+    display: flex;
+    justify-content: flex-start;
+    max-width: 1100px;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+  .megaNavHeader {
+    font-size: 1.2rem;
+    width: 250px;
+    margin-right: 30px;
+    border-right: 1px solid #dcdcdc;
+  }
+    .megaNavHeader .navTtl {
+      font-size: 2.8rem;
+      letter-spacing: normal;
+      margin-bottom: 15px;
+    }
+      .megaNavHeader .navTtl span {
+        display: block;
+      }
+    .megaNavHeader .more > a {
+      display: inline-block;
+      padding-left: 0;
+      padding-right: 15px;
+      background: url("../img/common/nav_arw.png") no-repeat right center;
+    }
+  .megaNavContent {
+    display: flex;
+    justify-content: flex-start;
+    flex-wrap: wrap;
+    max-width: 790px;
+    width: calc(100% - 300px);
+  }
+    .megaNavSub {
+      width: 246px;
+    }
+    .megaNavSubTtl {
+      font-size: 2.4rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 15px;
+    }
+    .megaNavContent > ul {
+      margin-right: 60px;
+    }
+    .megaNavContent > ul:last-child {
+      margin-right: 0;
+    }
+      .megaNavContent > ul > li {
+        margin-bottom: 5px;
+        line-height: 1.6;
+      }
+    .megaNavContent .megaNavSlide {
+      padding: 0 0 0 1em;
+      position: static;
+    }
+  .megaNavSlide a {
+    display: inline-block;
+    color: #000;
+    font-size: 1.4rem;
+    letter-spacing: 1px;
+    text-decoration: none;
+    padding: 5px 0;
+    position: relative;
+    transition: all .2s ease;
+  }
+  .megaNavSlide a:hover {
+    opacity: .7;
+  }
+  .megaNavSlide a.icoWin {
+    padding-right: 15px;
+    background: url("../img/common/ico_blank_white.png") no-repeat right center;
+  }
+.globalHeader .searchArea {
+  width: 100%;
+  padding: 40px 70px;
+  background: #efefef;
+  position: fixed;
+  top: 160px;
+  left: 0;
+  z-index: 100;
+  box-sizing: border-box;
+  transition: .2s;
+  visibility: hidden;
+  opacity: 0;
+}
+.globalHeader .searchArea.active {
+  visibility: visible;
+  opacity: 1;
+}
+  .globalHeader .searchVox {
+    max-width: 960px;
+    margin: 0 auto;
+    background: #fff;
+    padding: 12px;
+  }
+    .globalHeader .searchVox .gsc-search-box {
+      margin-bottom: 0;
+    }
+    .globalHeader .searchVox .gsib_a {
+      padding: 0;
+    }
+      .globalHeader .searchVox .gsib_a input {
+        padding: 10px !important;
+        box-sizing: border-box;
+      }
+    .globalHeader .searchVox table.gsc-search-box td.gsc-input {
+      padding-right: 0;
+    }
+    .globalHeader .searchVox .gsc-search-button {
+      border-left: 1px solid #e5e8f1;
+    }
+    .globalHeader .searchVox .gsc-input-box {
+      border: none;
+      padding: 0;
+    }
+    .globalHeader .searchVox .gsc-search-button {
+      text-align: center;
+      width: 50px;
+      padding-left: 5px;
+    }
+    .globalHeader .searchVox .gsc-search-button-v2 {
+      cursor: pointer;
+      text-indent: -99999px;
+      width: 20px;
+      height: 20px;
+      padding: 0;
+      background: url(../img/common/ico_search.png) no-repeat center center / 20px 20px;
+      border: none;
+    }
+  .globalHeader .searchArea .closeBtn {
+    width: 30px;
+    height: 30px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+    .globalHeader .searchArea .closeBtn a {
+      display: block;
+      text-indent: -99999px;
+      height: 100%;
+      position: relative;
+    }
+    .globalHeader .searchArea .closeBtn a::before,
+    .globalHeader .searchArea .closeBtn a::after {
+      display: block;
+      content: "";
+      width: 30px;
+      height: 2px;
+      background: #006040;
+      position: absolute;
+      top: 15px;
+      left: 0;
+    }
+    .globalHeader .searchArea .closeBtn a::before {
+      transform: rotate(-45deg);
+    }
+    .globalHeader .searchArea .closeBtn a::after {
+      transform: rotate(45deg);
+    }
+.globalHeader .langNav {
+  position: absolute;
+  top: 55px;
+  right: 35px;
+  transition: .2s;
+  z-index: 100;
+  visibility: hidden;
+  opacity: 0;
+}
+.globalHeader .langNav.active {
+  visibility: visible;
+  opacity: 1;
+}
+  .globalHeader .langNav li {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 1.1;
+    padding: 15px 8px;
+  }
+    .globalHeader .langNav li a {
+      display: block;
+      color: #006040;
+      text-decoration: none;
+      padding: 5px 5px;
+    }
+    .globalHeader .langNav li a:hover {
+      text-decoration: underline;
+    }
+#searchResultBox {
+  width: 940px;
+  padding-bottom: 80px;
+  margin: 0 auto;
+}
+  #searchResultBox .gsc-control-cse {
+    padding: 0;
+  }
+/**
+ * ****************************************************
+ *
+ * START : azlink add common css 2017.02.09
+ *
+ * ****************************************************
+ */
+/**
+ * white-space
+ */
+.wsN { white-space: nowrap !important; }
+
+/**
+ *  word-wrap
+ */
+.wrBW { word-wrap: break-word !important; }
+
+/**
+ * ワードブレイク
+ */
+.wbBrkA { word-break: break-all !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 文字色装飾
+ * --------------------------------------------------------------------------
+ */
+.cWhite { color: #FFFFFF !important; }
+.cRed { color: #C71B23 !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 文字装飾
+ * --------------------------------------------------------------------------
+ */
+.decUline { text-decoration: underline !important; }
+.decNone { text-decoration: none !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 見出し
+ * --------------------------------------------------------------------------
+ */
+.headStyle01 {
+  font-size: 2.2rem;
+  font-weight: bold;
+  line-height: 38px;
+  padding-left: 23px;
+  margin-bottom: 30px;
+  background: url(../img/common/ico_point03.svg) no-repeat left 0.3em / 11px 20px;
+}
+.headStyle02 {
+  font-size: 2.0rem;
+  font-weight: bold;
+  line-height: 36px;
+  padding-left: 20px;
+  margin-bottom: 30px;
+  position: relative;
+}
+.headStyle02::after {
+  display: block;
+  content: "";
+  width: 11px;
+  height: 2px;
+  background: #006040;
+  position: absolute;
+  top: 0.8em;
+  left: 0;
+}
+.headStyle03 {
+  font-size: 1.8rem;
+  font-weight: normal;
+  line-height: 30px;
+  margin-bottom: 30px;
+}
+.headStyle04 {
+  font-size: 1.6rem;
+  font-weight: normal;
+  line-height: 30px;
+  margin-bottom: 20px;
+}
+.headStyle05 {
+  font-size: 1.4rem;
+  font-weight: normal;
+  line-height: 26px;
+  margin-bottom: 20px;
+}
+.mainContents .baseBlock p.copyTxt {
+  color: #006040;
+  font-size: 2.6rem;
+  font-weight: bold;
+  margin-bottom: 20px !important;
+}
+/**
+ * --------------------------------------------------------------------------
+ * テーブル
+ * --------------------------------------------------------------------------
+ */
+.tableStyle01 {
+  width: 100%;
+  border-collapse: collapse;
+}
+  .tableStyle01 tbody th {
+    color: #006040;
+    font-weight: normal;
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #d4e6dd;
+    padding: 20px 30px 50px 20px;
+    position: relative;
+  }
+  .tableStyle01 tbody th::before {
+    display: block;
+    content: "";
+    width: 27px;
+    height: 1px;
+    background: #006040;
+    position: absolute;
+    top: -1px;
+    left: 20px;
+  }
+  .tableStyle01 tbody td {
+    text-align: left;
+    vertical-align: middle;
+    border-top: 1px solid #d4e6dd;
+    padding: 20px 20px 50px 20px;
+  }
+.tableStyle02 {
+  width: 100%;
+  border-collapse: collapse;
+  border-top: 1px solid #006040;
+  border-bottom: 1px solid #006040;
+}
+  .tableStyle02 th {
+    font-size: 1.4rem;
+    padding: 25px 30px;
+  }
+  .tableStyle02 thead th {
+    color: #fff;
+    font-weight: bold;
+    text-align: center;
+    background: #006040;
+  }
+  .tableStyle02 thead .headTH th {
+    color: #fff;
+    font-weight: normal;
+    text-align: center;
+    background: #006040;
+  }
+  .tableStyle02 thead tr th:not(:first-of-type) {
+    border-left: 1px solid #d4e6dd;
+  }
+  .tableStyle02 tbody th {
+    font-weight: normal;
+    background: #f7f8fb;
+    border-bottom: 1px solid #d4e6dd;
+  }
+  .tableStyle02 td {
+    font-size: 1.4rem;
+    white-space: nowrap;
+    text-align: center;
+    padding: 25px 30px;
+    border-left: 1px solid #d4e6dd;
+    border-bottom: 1px solid #d4e6dd;
+  }
+  .tableStyle02 tbody tr:last-of-type th,
+  .tableStyle02 tbody tr:last-of-type td {
+    border-bottom: none;
+  }
+  .tableStyle02 .strong {
+    background: #f5f5f9;
+  }
+.formTable {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0 35px;
+  margin-bottom: 70px;
+}
+  .formTable th {
+    font-weight: normal;
+    text-align: left;
+    width: 180px;
+    padding: 20px 0 20px 30px;
+    background: #fff;
+    border-left: 1px solid #006040;
+  }
+  .formTable.checked th {
+    border-left-color: #d4e6dd;
+  }
+    .formTable th div {
+      font-size: 1.5rem;
+      height: 100%;
+      padding-right: 45px;
+      position: relative;
+    }
+      .formTable th .icoRequire {
+        margin: -0.8em 0 0 0;
+        position: absolute;
+        top: 50%;
+        right: 0;
+      }
+  .formTable td {
+    padding: 0 0 0 20px;
+    background: #fff;
+  }
+  .formTable.checked td {
+    border-left: 1px solid #006040;
+  }
+    .formTable td .caution {
+      margin-top: 5px;
+      color: #FF0000;
+      font-size: 1.2rem;
+    }
+    .formTable p {
+      margin-bottom: 0;
+    }
+    .formTable p.caption {
+      color: #808080;
+      font-size: 1.2rem;
+      line-height: 1.3;
+      margin-top: 8px;
+    }
+    .formTable input[type="text"],
+    .formTable textarea {
+      width: 100%;
+      padding: 20px;
+      border: none;
+      background: #E6E6E6;
+      box-sizing: border-box;
+    }
+    .formTable input.short {
+      width: 130px;
+    }
+    .formTable input.short2 {
+      width: 160px;
+    }
+    .formTable input.medium {
+      width: 100%;
+    }
+    .formTable select {
+      padding: 20px;
+      border: none;
+      background: #E6E6E6;
+    }
+    .formTable .require input[type="text"],
+    .formTable .require textarea,
+    .formTable .require select {
+      background: #E5E8F1;
+    }
+    .formTable .require #entryPref {
+      margin-bottom: 20px;
+    }
+    .formTable .require.errorTD input[type="text"],
+    .formTable .require.errorTD textarea,
+    .formTable .require.errorTD select {
+      background: #FBE0DE;
+    }
+  .btnArea {
+    display: flex;
+    justify-content: center;
+    text-decoration: none;
+    margin: 0 auto;
+    overflow: hidden;
+  }
+    .btnArea .confirmBtn {
+      width: 260px;
+      margin: 0 15px;
+    }
+    .btnArea .submitBtn {
+      width: 260px;
+      margin: 0 15px;
+      position: relative;
+    }
+    .btnArea .inputBtn {
+      width: 360px;
+      margin: 0 auto;
+      position: relative;
+    }
+      .btnArea input {
+        cursor: pointer;
+        display: block;
+        color: #000;
+        font-size: 1.6rem;
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        padding: 20px 0;
+        margin: 0 auto;
+        border: none;
+        background: #fff;
+        border: 1px solid #006040;
+        border-radius: 10em;
+        transition: .2s;
+      }
+      .btnArea .submitBtn input {
+        color: #fff;
+        background: #006040;
+      }
+      .btnArea input:hover,
+      .btnArea input:hover {
+        opacity: 0.7;
+      }
+/**
+ * --------------------------------------------------------------------------
+ * ボックス
+ * --------------------------------------------------------------------------
+ */
+.voxStyle01 {
+  max-width: 790px;
+  padding: 40px 50px;
+  margin: 100px auto;
+  background: #edeff5;
+}
+  .voxStyle01 p:last-child {
+    margin-bottom: 0 !important;
+  }
+.columnVox {
+  display: flex;
+  justify-content: center;
+}
+  .columnVox .item {
+    width: 300px;
+    margin-right: 20px;
+    margin-bottom: 90px;
+  }
+  .columnVox .item:nth-of-type(3n) {
+    margin-right: 0;
+  }
+    .columnVox .item figure {
+      text-align: center;
+    }
+      .columnVox .item figure figcaption {
+        font-size: 1.4rem;
+        line-height: 26px;
+        text-align: left;
+        margin-top: 12px;
+      }
+/**
+ * --------------------------------------------------------------------------
+ * セレクトリスト
+ * --------------------------------------------------------------------------
+ */
+.selectList {
+  margin-bottom: 50px;
+  overflow: hidden;
+}
+  .selectList .item {
+    width: 31.3%;
+    float: left;
+    margin-right: 2%;
+    position: relative;
+  }
+  .selectList .item::after {
+    display: block;
+    content: "";
+    width: 6px;
+    height: 6px;
+    border-top: 1px solid #006040;
+    border-right: 1px solid #006040;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transform: translateY(-50%) rotate(135deg);
+  }
+  .selectList .item:nth-child(3n) {
+    margin-right: 0;
+  }
+    .selectList .item select {
+      cursor: pointer;
+      width: 100%;
+      color: #006040;
+      background: #fff;
+      padding: 20px 25px;
+      border: 1px solid #d4e6dd;
+      border-bottom: 1px solid #006040;
+      -webkit-appearance: none;
+      -moz-appearance: none;
+      appearance: none;
+      position: relative;
+    }
+
+/**
+ * --------------------------------------------------------------------------
+ * アンカーリンク
+ * --------------------------------------------------------------------------
+ */
+.anchorLink {
+  margin-bottom: 90px;
+}
+  .anchorLink ul {
+    display: flex;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+  }
+    .anchorLink ul li {
+      width: 305px;
+      margin-right: 12px;
+    }
+    .anchorLink ul li:nth-of-type(3n) {
+      margin-right: 0;
+    }
+      .anchorLink ul li a {
+        display: block;
+        color: #000;
+        text-decoration: none;
+        padding: 15px 40px 15px 20px;
+        background: url(../img/common/ico_arrow_down.svg) no-repeat 95% center / 8px 6px;
+        border-bottom: 1px solid #006040;
+      }
+/**
+ * --------------------------------------------------------------------------
+ * タブ
+ * --------------------------------------------------------------------------
+ */
+.tabVoxWrapper {
+  margin-bottom: 130px;
+}
+.tabs {
+  list-style-type: none;
+  display: flex;
+  justify-content: space-around;
+  max-width: 940px;
+  padding: 0 0 8px 0;
+  margin: 0;
+  overflow: hidden;
+}
+  .tabs li {
+    width: 305px;
+    margin-right: 12px;
+  }
+  .tabs li:nth-of-type(3n) {
+    margin-right: 0;
+  }
+    .tabs li a {
+      display: block;
+      color: #000;
+      font-size: 1.6rem;
+      letter-spacing: 0.1em;
+      line-height: 1.3;
+      text-decoration: none;
+      text-align: center;
+      padding: 20px 0;
+      border: 1px solid #006040;
+      position: relative;
+      transition: .2s;
+    }
+    .tabs li.active a,
+    .tabs li a:hover {
+      color: #fff;
+      background-color: #006040;
+    }
+.tabVoxWrapper .tabContents {
+  display: none;
+  padding-top: 50px;
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * アイコン
+ * --------------------------------------------------------------------------
+ */
+.icoPDF::after,
+.icoDOC::after,
+.icoXLS::after,
+.icoMP3::after,
+.icoMP4::after,
+.icoNW::after {
+  display: inline-block;
+  content: "";
+  color: #3c71d4;
+  margin-left: 8px;
+  background: no-repeat center center / cover;
+}
+a.icoPDF,
+a.icoDOC,
+a.icoXLS,
+a.icoMP3,
+a.icoMP4,
+a.icoNW {
+  color: #3c71d4;
+}
+.icoPDF::after {
+  width: 18px;
+  height: 16px;
+  background-image: url(../img/common/ico_pdf_blue.png);
+}
+.icoDOC::after {
+  width: 24px;
+  height: 16px;
+  background-image: url(../img/common/ico_doc_blue.png);
+}
+.icoXLS::after {
+  width: 22px;
+  height: 16px;
+  background-image: url(../img/common/ico_xls_blue.png);
+}
+.icoMP3::after {
+  width: 22px;
+  height: 16px;
+  background-image: url(../img/common/ico_mp3_blue.png);
+}
+.icoMP4::after {
+  width: 22px;
+  height: 16px;
+  background-image: url(../img/common/ico_mp4_blue.png);
+}
+.icoNW::after {
+  width: 10px;
+  height: 10px;
+  background-image: url(../img/common/ico_blank_blue2.png);
+}
+.icoRequire {
+  display: inline-block;
+  color: #fff;
+  font-size: 1.2rem;
+  font-weight: normal;
+  text-align: center;
+  line-height: 1.3;
+  padding: 3px 5px;
+  margin: 0 3px;
+  background: #006040;
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 文字の太さ
+ * --------------------------------------------------------------------------
+ */
+.fwN { font-weight: normal !important; }
+.fwB { font-weight: bold !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 文字の高さ
+ * --------------------------------------------------------------------------
+ */
+.lh1 { line-height: 1 !important; }
+.lh1-2 { line-height: 1.2 !important; }
+.lh1-5 { line-height: 1.5 !important; }
+.lh2 { line-height: 2 !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * レイアウト
+ * --------------------------------------------------------------------------
+ */
+.mA { margin: 0 auto !important; }
+.mLA { margin-left: auto !important; }
+.mRA { margin-right: auto !important; }
+.m0 { margin: 0 !important; }
+.m3 { margin: 3px !important; }
+.m5 { margin: 5px !important; }
+.m10 { margin: 10px !important; }
+.m15 { margin: 15px !important; }
+.m20 { margin: 20px !important; }
+.m25 { margin: 25px !important; }
+.m30 { margin: 30px !important; }
+.m35 { margin: 35px !important; }
+.m40 { margin: 40px !important; }
+.m45 { margin: 45px !important; }
+.m50 { margin: 50px !important; }
+.mT0 { margin-top: 0px !important; }
+.mT5 { margin-top: 5px !important; }
+.mT10 { margin-top: 10px !important; }
+.mT15 { margin-top: 15px !important; }
+.mT20 { margin-top: 20px !important; }
+.mT25 { margin-top: 25px !important; }
+.mT30 { margin-top: 30px !important; }
+.mT35 { margin-top: 35px !important; }
+.mT40 { margin-top: 40px !important; }
+.mT45 { margin-top: 45px !important; }
+.mT50 { margin-top: 50px !important; }
+.mR0 { margin-right: 0px !important; }
+.mB3 { margin-right: 3px !important; }
+.mR5 { margin-right: 5px !important; }
+.mR10 { margin-right: 10px !important; }
+.mR15 { margin-right: 15px !important; }
+.mR20 { margin-right: 20px !important; }
+.mR25 { margin-right: 25px !important; }
+.mR30 { margin-right: 30px !important; }
+.mR35 { margin-right: 35px !important; }
+.mR40 { margin-right: 40px !important; }
+.mR45 { margin-right: 45px !important; }
+.mR50 { margin-right: 50px !important; }
+.mR70 { margin-right: 70px !important; }
+.mR100 { margin-right: 100px !important; }
+.mR110 { margin-right: 110px !important; }
+.mR120 { margin-right: 120px !important; }
+.mR130 { margin-right: 130px !important; }
+.mR140 { margin-right: 140px !important; }
+.mR150 { margin-right: 150px !important; }
+.mR160 { margin-right: 160px !important; }
+.mR170 { margin-right: 170px !important; }
+.mR180 { margin-right: 180px !important; }
+.mR190 { margin-right: 190px !important; }
+.mR200 { margin-right: 200px !important; }
+.mR210 { margin-right: 210px !important; }
+.mR220 { margin-right: 220px !important; }
+.mR230 { margin-right: 230px !important; }
+.mR240 { margin-right: 240px !important; }
+.mR250 { margin-right: 250px !important; }
+.mR260 { margin-right: 260px !important; }
+.mR280 { margin-right: 280px !important; }
+.mR300 { margin-right: 300px !important; }
+.mB0 { margin-bottom: 0px !important; }
+.mB3 { margin-bottom: 3px !important; }
+.mB5 { margin-bottom: 5px !important; }
+.mB10 { margin-bottom: 10px !important; }
+.mB15 { margin-bottom: 15px !important; }
+.mB20 { margin-bottom: 20px !important; }
+.mB25 { margin-bottom: 25px !important; }
+.mB30 { margin-bottom: 30px !important; }
+.mB35 { margin-bottom: 35px !important; }
+.mB40 { margin-bottom: 40px !important; }
+.mB45 { margin-bottom: 45px !important; }
+.mB50 { margin-bottom: 50px !important; }
+.mL0 { margin-left: 0px !important; }
+.mL5 { margin-left: 5px !important; }
+.mL1em { margin-left: 1.0em !important; }
+.mL10 { margin-left: 10px !important; }
+.mL15 { margin-left: 15px !important; }
+.mL20 { margin-left: 20px !important; }
+.mL25 { margin-left: 25px !important; }
+.mL30 { margin-left: 30px !important; }
+.mL35 { margin-left: 35px !important; }
+.mL40 { margin-left: 40px !important; }
+.mL45 { margin-left: 45px !important; }
+.mL50 { margin-left: 50px !important; }
+.mL55 { margin-left: 55px !important; }
+.mL60 { margin-left: 60px !important; }
+.mL70 { margin-left: 70px !important; }
+.mL80 { margin-left: 80px !important; }
+.mL85 { margin-left: 85px !important; }
+.mL105 { margin-left: 105px !important; }
+.mL110 { margin-left: 110px !important; }
+.mL115 { margin-left: 115px !important; }
+.mL120 { margin-left: 120px !important; }
+.mL130 { margin-left: 130px !important; }
+.mL140 { margin-left: 140px !important; }
+.mL150 { margin-left: 150px !important; }
+.mL170 { margin-left: 170px !important; }
+.mL200 { margin-left: 200px !important; }
+.mL225 { margin-left: 225px !important; }
+.mL270 { margin-left: 270px !important; }
+.p0 { padding: 0 !important; }
+.p3 { padding: 3px !important; }
+.p5 { padding: 5px !important; }
+.p10 { padding: 10px !important; }
+.p15 { padding: 15px !important; }
+.p20 { padding: 20px !important; }
+.p25 { padding: 25px !important; }
+.p30 { padding: 30px !important; }
+.p35 { padding: 35px !important; }
+.p40 { padding: 40px !important; }
+.p45 { padding: 45px !important; }
+.p50 { padding: 50px !important; }
+.pT0 { padding-top: 0px !important; }
+.pT2 { padding-top: 2px !important; }
+.pT3 { padding-top: 3px !important; }
+.pT5 { padding-top: 5px !important; }
+.pT10 { padding-top: 10px !important; }
+.pT15 { padding-top: 15px !important; }
+.pT20 { padding-top: 20px !important; }
+.pT25 { padding-top: 25px !important; }
+.pT30 { padding-top: 30px !important; }
+.pT35 { padding-top: 35px !important; }
+.pT40 { padding-top: 40px !important; }
+.pT45 { padding-top: 45px !important; }
+.pT50 { padding-top: 50px !important; }
+.pT80 { padding-top: 80px !important; }
+.pT100 { padding-top: 100px !important; }
+.pR0 { padding-right: 0px !important; }
+.pR5 { padding-right: 5px !important; }
+.pR10 { padding-right: 10px !important; }
+.pR15 { padding-right: 15px !important; }
+.pR20 { padding-right: 20px !important; }
+.pR25 { padding-right: 25px !important; }
+.pR30 { padding-right: 30px !important; }
+.pR35 { padding-right: 35px !important; }
+.pR40 { padding-right: 40px !important; }
+.pR45 { padding-right: 45px !important; }
+.pR50 { padding-right: 50px !important; }
+.pB0 { padding-bottom: 0px !important; }
+.pB5 { padding-bottom: 5px !important; }
+.pB10 { padding-bottom: 10px !important; }
+.pB15 { padding-bottom: 15px !important; }
+.pB20 { padding-bottom: 20px !important; }
+.pB25 { padding-bottom: 25px !important; }
+.pB30 { padding-bottom: 30px !important; }
+.pB35 { padding-bottom: 35px !important; }
+.pB40 { padding-bottom: 40px !important; }
+.pB45 { padding-bottom: 45px !important; }
+.pB50 { padding-bottom: 50px !important; }
+.pL0 { padding-left: 0px !important; }
+.pL5 { padding-left: 5px !important; }
+.pL10 { padding-left: 10px !important; }
+.pL15 { padding-left: 15px !important; }
+.pL20 { padding-left: 20px !important; }
+.pL25 { padding-left: 25px !important; }
+.pL30 { padding-left: 30px !important; }
+.pL35 { padding-left: 35px !important; }
+.pL40 { padding-left: 40px !important; }
+.pL45 { padding-left: 45px !important; }
+.pL50 { padding-left: 50px !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * float用スタイル
+ * --------------------------------------------------------------------------
+ */
+.fLeft { float: left !important; }
+.fRight { float: right !important; }
+.fClear { clear: both !important; }
+.fClearL { clear: left !important; }
+.fClearR { clear: right !important; }
+.fN { float: none !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * position用スタイル
+ * --------------------------------------------------------------------------
+ */
+.posRel { position: relative !important; }
+.posAbs { position: absolute !important; }
+
+/**
+ *  overflow用スタイル
+ */
+.ofHidden { overflow: hidden !important; }
+.ofAuto { overflow: auto !important; }
+.ofVisible { overflow: visible !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * display用スタイル
+ * --------------------------------------------------------------------------
+ */
+.dspInline { display: inline !important; }
+.dspBlock { display: block !important; }
+.dspInlBlock { display: inline-block !important; }
+.dspNone { display: none !important; }
+.dspTable { display: table !important; }
+.dspTblCell { display: table-cell !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 汎用行揃え用スタイル
+ * --------------------------------------------------------------------------
+ */
+.alignLeft { text-align: left !important; }
+.alignCenter { text-align: center !important; }
+.alignRight { text-align: right !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 汎用縦揃え用スタイル
+ * --------------------------------------------------------------------------
+ */
+.valignTop { vertical-align: top !important; }
+.valignMiddle { vertical-align: middle !important; }
+.valignBottom { vertical-align: bottom !important; }
+.valignTextBottom { vertical-align: text-bottom !important; }
+.valignSuper { vertical-align: super !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * 汎用幅指定用スタイル
+ * --------------------------------------------------------------------------
+ */
+.w5 { width: 5px !important; }
+.w10em { width: 10em !important; }
+.w10p { width: 10% !important; }
+.w15p { width: 15% !important; }
+.w20p { width: 20% !important; }
+.w25p { width: 25% !important; }
+.w30p { width: 30% !important; }
+.w30 { width: 30px !important; }
+.w40p { width: 40% !important; }
+.w40 { width: 40px !important; }
+.w50 { width: 50px !important; }
+.w60 { width: 60px !important; }
+.w70 { width: 70px !important; }
+.w80 { width: 80px !important; }
+.w90 { width: 90px !important; }
+.w98p { width: 98% !important; }
+.w99p { width: 99% !important; }
+.w100 { width: 100px !important; }
+.w100p { width: 100% !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * hasLayout true
+ * --------------------------------------------------------------------------
+ */
+.h1p { height: 1%; }
+.z1 { zoom: 1; }
+
+/**
+ * --------------------------------------------------------------------------
+ * リスト用スタイル
+ * --------------------------------------------------------------------------
+ */
+.listTypeNone {
+  list-style-type: none;
+}
+.listInside {
+  list-style-position: inside;
+}
+.listOutside {
+  list-style-position: outside;
+}
+.listTypeDisc {}
+  .listTypeDisc li {
+    list-style-type: disc;
+    margin-left: 20px;
+  }
+.listTypeSquare {
+  list-style-type: square;
+}
+.listTypeCircle {
+  list-style-type: circle;
+}
+.listTypeNum {
+  padding-left: 0;
+  margin-left: 0;
+  margin-top: 0;
+}
+  .listTypeNum li {
+    list-style-type: decimal;
+    margin-left: 20px;
+  }
+.listNumParentheses {
+  list-style-type: none;
+  list-style-position: inside;
+}
+.listNumParentheses li {
+  counter-increment: cnt;
+}
+.listNumParentheses li:before {
+  display: marker;
+  content: "(" counter(cnt) ")";
+}
+
+/**
+ * --------------------------------------------------------------------------
+ * 背景色用スタイル
+ * --------------------------------------------------------------------------
+ */
+.bgFFFFFF { background-color: #FFFFFF !important; }
+.bgE6ECE8 { background-color: #e6ece8 !important; }
+.bgF0F0DC { background-color: #F0F0DC !important; }
+.bgF0EFEE { background-color: #F0EFEE !important; }
+.bgEBE6E1 { background-color: #EBE6E1 !important; }
+.bgC9C9C9 { background-color: #C9C9C9 !important; }
+.bgF5F5F5 { background-color: #F5F5F5 !important; }
+.bgF7F7F7 { background-color: #F7F7F7 !important; }
+
+/**
+ * --------------------------------------------------------------------------
+ * ボーダー用スタイル
+ * --------------------------------------------------------------------------
+ */
+.bdr1s999 { border: 1px solid #999999 !important; }
+.bdr1sCCC { border: 1px solid #CCCCCC !important; }
+.bdr1sCBCBCB { border: 1px solid #CBCBCB !important; }
+.bdr1sBBB { border: 1px solid #BBBBBB !important; }
+.bdr1s5B5B5B { border: 1px solid #5B5B5B !important; }
+.bdr1do444444 { border: 1px dotted #444444 !important; }
+.bdrTn { border-top: none !important; }
+.bdrRn { border-right: none !important; }
+.bdrBn { border-bottom: none !important; }
+.bdrLn { border-left: none !important; }
+.bdrN { border: none !important; }
+.bdrTop {
+  border-right: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+}
+.bdrRight {
+  border-top: none !important;
+  border-bottom: none !important;
+  border-left: none !important;
+}
+.bdrBottom {
+  border-top: none !important;
+  border-right: none !important;
+  border-left: none !important;
+}
+.bdrLeft {
+  border-top: none !important;
+  border-right: none !important;
+  border-bottom: none !important;
+}
+
+/**
+ * テキストインデント
+ */
+.tim1em { text-indent: -1.0em; }
+.ti1em { text-indent: 1.0em; }
+
+/**
+ * カーソル
+ */
+.csrPtr { cursor: pointer; }
+/**
+ * --------------------------------------------------------------------------
+ * ボタン用スタイル
+ * --------------------------------------------------------------------------
+ */
+.moreBtn {}
+  .moreBtn div,
+  .moreBtn a {
+    display: inline-block;
+    color: #006040;
+    text-decoration: none;
+    padding: 45px 0 0 55px;
+    position: relative;
+    transition: opacity .2s ease;
+  }
+  .moreBtn a:hover {
+    opacity: .7;
+  }
+  .moreBtn div::before,
+  .moreBtn a::before {
+    display: block;
+    content: "";
+    width: 70px;
+    height: 70px;
+    background: url(../img/common/ico_arrow01.svg) no-repeat center center / cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+  .moreBtn.white div,
+  .moreBtn.white a {
+    color: #fff;
+  }
+  .moreBtn.white div::before,
+  .moreBtn.white a::before {
+    background-image: url(../img/common/ico_arrow02.svg);
+  }
+  .moreBtn div span,
+  .moreBtn a span {
+    font-size: 1.5rem;
+    position: relative;
+    z-index: 2;
+  }
+  .moreBtn .icoWin span {
+    padding-right: 18px;
+    background: url("../img/common/ico_blank_blue.png") no-repeat right center;
+  }
+  .moreBtn.white .icoWin span {
+    background-image: url("../img/common/ico_blank_white.png");
+  }
+.moreLink {
+  text-align: right;
+}
+  .moreLink a {
+    display: inline-block;
+    color: #000;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-decoration: none;
+    padding-left: 20px;
+    background: url(../img/common/ico_point.svg) no-repeat left center / 10px 10px;
+    transition: .2s;
+  }
+  .moreLink a:hover {
+    opacity: 0.7;
+  }
+  .moreLink.white a {
+    color: #fff;
+    background-image: url(../img/common/ico_point02.svg);
+  }
+/**
+ * --------------------------------------------------------------------------
+ * alphaBg
+ * --------------------------------------------------------------------------
+ */
+#alphaBg {
+  width: 100%;
+  position: fixed;
+  left: 0px;
+  top: 0px;
+  z-index: 500;
+  background: #000000;
+  display: none;
+  min-height: 100%;
+}
+.popupWrapper {
+  width: 75.5%;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  margin-left: -37.75%;
+  display: none;
+  z-index: 2100;
+  /*visibility: hidden;*/
+}
+  .popupWrapper .closeVox {
+    border-left: 2px solid #fff;
+    position: absolute;
+    top: 0;
+    right: 0;
+  }
+  .popupWrapper .popupCloseBt {
+    display: block;
+    height: 62px;
+    line-height: 62px;
+    text-decoration: none;
+    padding: 0 45px 0 20px;
+    position: relative;
+    transition: .2s;
+  }
+  .popupWrapper .popupCloseBt:hover {
+    background: #323c99;
+  }
+  .popupWrapper a.popupCloseBt:before {
+    color: #000;
+    font-weight: bold;
+    content: "CLOSE";
+    transition: .2s;
+  }
+  .popupWrapper a.popupCloseBt:hover:before {
+    color: #fff;
+  }
+    .popupWrapper .popupCloseBt span {
+      width: 15px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      right: 20px;
+      top: 50%;
+      margin: -1px 0 0 -8px;
+      transition: .2s;
+    }
+    .popupWrapper .popupCloseBt:hover span {
+      background: #fff;
+    }
+    .popupWrapper .popupCloseBt span:nth-child(1) {
+      -webkit-transform: rotate(-45deg);
+          -ms-transform: rotate(-45deg);
+              transform: rotate(-45deg);
+    }
+    .popupWrapper .popupCloseBt span:nth-child(2) {
+      -webkit-transform: rotate(45deg);
+          -ms-transform: rotate(45deg);
+              transform: rotate(45deg);
+    }
+  .popupWrapper .titleVox {
+    font-size: 1.6rem;
+    font-weight: normal;
+    letter-spacing: 0.1em;
+    background-color: #f1f1f5;
+    height: 62px;
+    line-height: 62px;
+    padding: 0 120px 0 30px;
+  }
+  .popupWrapper .contentWrapper {}
+  .popupWrapper .content {
+    background: #FFFFFF;
+  }
+  .popupWrapper .inner {
+    padding: 30px;
+  }
+    .popupWrapper .inner p {
+      margin-bottom: 30px;
+    }
+#popupContents {
+  display: none;
+}
+#popupWrapperMovie {}
+  #popupWrapperMovie .movieVox  {
+    height: 0;
+    padding-top: 56.25%;
+    position: relative;
+    width: 100%;
+  }
+    #popupWrapperMovie .movieVox iframe {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100% !important;
+      height: 100% !important;
+    }
+/**
+ * --------------------------------------------------------------------------
+ * accordion
+ * --------------------------------------------------------------------------
+ */
+.accordionWrapper {
+  margin-top: -1px;
+  border-bottom: 1px solid #006040;
+  overflow: hidden;
+}
+  .accordionWrapper .accordionTtl {
+    cursor: pointer;
+    font-size: 1.6rem;
+    padding: 30px 50px 30px 30px;
+    border-top: 1px solid #006040;
+    position: relative;
+    transition: .2s;
+  }
+  .accordionWrapper .accordionTtl::before,
+  .accordionWrapper .accordionTtl::after {
+    display: block;
+    content: "";
+    width: 15px;
+    height: 1px;
+    background: #006040;
+    position: absolute;
+    top: 50%;
+    right: 30px;
+    transition: .2s;
+  }
+  .accordionWrapper .accordionTtl::after {
+    transform: rotate(90deg);
+  }
+  .accordionWrapper.open .accordionTtl {
+    color: #fff;
+    background: #333;
+  }
+  .accordionWrapper.open .accordionTtl::before {
+    background: #fff;
+  }
+  .accordionWrapper.open .accordionTtl::after {
+    transform: rotate(0);
+    opacity: 0;
+  }
+  .accordionWrapper .accordionInner {
+    display: none;
+    padding-top: 40px;
+    padding-bottom: 50px;
+  }
+/**
+ * ****************************************************
+ *
+ * END : azlink add common css 2017.02.09
+ *
+ * ****************************************************
+ */
+/* ---------------------------------------------------------------- *
+    スマートフォン・タブレット（960px未満）
+----------------------------------------------------------------- */
+@media only screen and (max-width: 960px) {
+  body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, form, fieldset, input, textarea, p, blockquote, th, td {
+    font-size: 1.5rem;
+  }
+  .view-pc { display: none; }
+  .view-tb { display: none; }
+  .deviceTb .view-tb { display: none; }
+  .view-sp { display: block; }
+  .view-notsp { display: none; }
+  .view-nottb { display: block; }
+  .view-notpc { display: block; }
+  .deviceTb .view-notpc { display: block; }
+  img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  .mask {
+    display: none;
+    min-width: 100%;
+    min-height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1;
+  }
+
+  .wrapper {
+    width: 100%;
+    padding-top: 100px;
+    padding-left: 0;
+  }
+
+  .mainContents {
+    padding-left: 0;
+  }
+  .mainContents .pageHeader {
+    width: auto;
+    padding-top: 30px;
+    margin-bottom: 40px;
+  }
+  .mainContents .pageHeader .pageTtl {
+    font-size: 2.6rem;
+    padding: 0 20px;
+    line-height: 40px;
+  }
+  .mainContents .breadcrumb {
+    width: auto;
+    padding: 3px 10px;
+  }
+  .mainContents .breadcrumb ul {
+    padding: 0;
+  }
+  .mainContents .breadcrumb ul li {
+    font-size: 0.9rem;
+  }
+  .mainContents .baseBlock {
+    width: auto;
+    padding: 0 20px;
+  }
+  .mainContents .baseBlock p {
+    font-size: 1.5rem;
+  }
+  /* .mainContents .baseBlock ul,
+  .mainContents .baseBlock ul li,
+  .mainContents .baseBlock ol,
+  .mainContents .baseBlock ol li {
+    font-size: 1.5rem;
+  } */
+  .mainContents .blockTtl {
+    font-size: 2.2rem;
+    line-height: 38px;
+    margin-bottom: 30px;
+  }
+
+  .globalHeader {
+    height: 100px;
+  }
+    .globalHeader .globalHeaderInner {
+      display: block;
+      padding: 45px 70px 0 0;
+      overflow: hidden;
+    }
+      .globalHeader .logo {
+        width: 100px;
+        height: 20px;
+        float: left;
+        margin: 18px 0 0 18px;
+      }
+        .globalHeader .logo img {
+          width: 100%;
+        }
+    .globalHeader #acdBtn {
+      cursor: pointer;
+      width: 70px;
+      height: 100px;
+      position: absolute;
+      top: 45px;
+      right: 0;
+      z-index: 51;
+    }
+      .globalHeader #acdBtn .btnDesign {
+        display: block;
+        width: 20px;
+        height: 2px;
+        background-color: #006040;
+        position: absolute;
+        left: 0;
+        right: 0;
+        margin: auto;
+        transition: .3s;
+      }
+      .globalHeader #acdBtn .btnDesign.btnTop {
+        top: 20px;
+      }
+      .globalHeader #acdBtn .btnDesign.btnMdl {
+        top: 26px;
+      }
+      .globalHeader #acdBtn .btnDesign.btnBom {
+        top: 32px;
+      }
+      .globalHeader #acdBtn.spActive .btnDesign {
+        transition: .3s;
+      }
+      .globalHeader #acdBtn.spActive .btnDesign.btnTop {
+        top: 26px;
+        transform: rotate(45deg);
+      }
+      .globalHeader #acdBtn.spActive .btnDesign.btnMdl {
+        width: 0;
+        height: 0;
+      }
+      .globalHeader #acdBtn.spActive .btnDesign.btnBom {
+        top: 26px;
+        transform: rotate(-45deg);
+      }
+  .globalHeader .langBtn {
+    width: 30px;
+    float: right;
+    margin-top: 12px;
+  }
+    .globalHeader .langBtn a {
+      display: block;
+      line-height: 1;
+      padding: 5px;
+    }
+    .globalHeader .langBtn img {
+      width: 20px;
+      vertical-align: middle;
+    }
+  .drawerMenu {
+    width: 100%;
+    height: calc(100vh - 100px);
+    padding: 0 20px 90px 20px;
+    background-color: #efefef;
+    position: fixed;
+    left: 100%;
+    top: 100px;
+    z-index: 50;
+    overflow-y: scroll;
+    overflow-x: hidden;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+    box-sizing: border-box;
+  }
+    .drawerMenu .megaNav {
+      display: block;
+      min-height: 100%;
+      position: relative;
+    }
+      .drawerMenu .megaNav .snsVox {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+      }
+        .drawerMenu .megaNav .snsVox .snsTtl {
+          display: block;
+          color: #042275;
+          font-size: 1.8rem;
+          letter-spacing: .1em;
+          width: 12em;
+        }
+        .drawerMenu .megaNav .snsList {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          width: 200px;
+        }
+          .drawerMenu .megaNav .snsList li {
+            width: 38px;
+            margin: 0 13px;
+          }
+  .megaNavParent {
+    display: block;
+  }
+    .megaNavParent > li {
+      font-size: 1.5rem;
+      margin: 0;
+      border-bottom: 1px solid #bababa;
+    }
+      .megaNavParent > li > a {
+        color: #000;
+        padding: 15px 30px;
+      }
+      .megaNavParent > li.tabDefault.tbWideActive > a,
+      .megaNavParent > li.tabDefault.tabActive > a,
+      .megaNavParent > li > a:hover {
+        color: #000;
+      }
+      .megaNavParent > li > a.icoWin {
+        background-image: url("../img/common/ico_blank_black.png");
+        background-position: 93% center;
+      }
+      .megaNavParent > li.parent > a {
+        background: url("../img/common/icon_plus.svg") no-repeat 94% center / 15px 15px;
+      }
+      .megaNavParent > li.parent.spActive > a {
+        background-image: url("../img/common/icon_minus.svg");
+      }
+  .megaNavParent a {
+    display: inline-block;
+    color: #000;
+    font-size: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.6;
+    text-decoration: none;
+    width: 100%;
+    padding: 10px 30px 10px 60px;
+    box-sizing: border-box;
+    position: relative;
+  }
+  .megaNavSlide {
+    display: none;
+    padding: 0 0 0 30px;
+    background: transparent;
+    position: static;
+    visibility: visible;
+    opacity: 1;
+  }
+    .megaNavSlide a:hover {
+      opacity: 1;
+    }
+    .megaNavSlide a.icoWin {
+      padding-right: 30px;
+      background-position: 92% center;
+    }
+    .megaNavSlideInner {
+      display: block;
+    }
+    .megaNavContent {
+      display: block;
+      width: auto;
+    }
+      .megaNavSub {
+        display: none;
+      }
+      .megaNavContent > ul {
+        display: block;
+        max-width: inherit;
+        width: auto;
+        margin-left: 0;
+        margin-right: 0;
+      }
+        .megaNavContent > ul li {
+          width: auto;
+          margin-bottom: 0;
+          border-top: 1px solid #dcdcdc;
+        }
+          .megaNavContent > ul li > a {
+            font-size: 1.3rem;
+            padding: 15px 30px 15px 20px;
+            background: url("../img/common/nav_arw_black.svg") no-repeat 92% center / 6px 9px;
+          }
+          .megaNavContent > ul li.parent > a {
+            background-image: url("../img/common/icon_plus.svg");
+            background-size: 9px 9px;
+          }
+          .megaNavContent > ul li.parent.spActive > a {
+            background-image: url("../img/common/icon_minus.svg");
+          }
+  .globalHeader .searchVox {
+    padding: 10px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+  }
+    .globalHeader .searchVox .gsc-search-button {
+      width: 45px;
+    }
+  .globalHeader .langNav {
+    padding: 0 10px;
+    background: #333;
+    border: 1px solid #fff;
+    border-top: none;
+    position: fixed;
+    top: 100px;
+    right: 0;
+  }
+    .globalHeader .langNav li {
+      display: block;
+      color: #fff;
+      font-size: 1.3rem;
+      padding: 0;
+      border-bottom: 1px solid #fff;
+    }
+    .globalHeader .langNav li:last-of-type {
+      border-bottom: none;
+    }
+      .globalHeader .langNav li a {
+        display: block;
+        color: #fff;
+        padding: 15px 10px;
+      }
+  #searchResultBox {
+    width: auto;
+  }
+    #searchResultBox .gsc-control-cse {
+      padding: 0 20px;
+    }
+  #f-nav .navList {
+    display: none;
+  }
+  #f-nav .navList.on {
+    display: block;
+  }
+  #f-nav .navList li {
+    width: 100%;
+    border-top: 1px solid #fff;
+  }
+  #f-nav .navList li:first-child {
+    border: none;
+  }
+  #f-nav .navList li a {
+    display: inline-block;
+    color: #fff;
+    font-size: 1.3rem;
+    line-height: 1;
+    text-align: left;
+    text-decoration: none;
+    width: 100%;
+    padding: 20px 25px;
+    background: #000 url(../img/common/nav_arw.png) no-repeat 95% center;
+    box-sizing: border-box;
+  }
+  #f-nav .navList li a:hover, #f-nav .navList li a.current {
+    background-color: #333;
+  }
+  #footer {}
+    #footer #pageTop {
+      width: 37px;
+      height: 37px;
+      right: 10px;
+      bottom: 6%;
+    }
+    #footer .footTop {
+      padding: 50px 30px 30px 30px;
+    }
+      #footer .snsVox {
+        margin-bottom: 40px;
+      }
+        #footer .snsVox .snsTtl {
+          color: #fff;
+          text-align: center;
+          margin-bottom: 15px;
+        }
+        #footer .snsList {
+          justify-content: center;
+        }
+          #footer .snsList li:last-of-type {
+            margin-right: 0;
+          }
+      #footer .footList {}
+        #footer .footList li {
+          display: block;
+          margin-right: 0;
+          margin-bottom: 25px;
+        }
+        #footer .footList li:last-of-type {
+          margin-bottom: 0;
+        }
+          #footer .footList li a {
+            font-size: 1.3rem;
+          }
+    #footer .footBottom {
+      background: #006040;
+    }
+      #footer .copyright {
+        display: block;
+        text-align: right;
+        color: #99a3c7;
+        font-size: 1.0rem;
+        letter-spacing: .4px;
+        max-width: 1100px;
+        padding: 5px 30px;
+        margin: 0 auto;
+      }
+  .indexContent {}
+    .indexContent .indexLead {
+      font-size: 1.6rem;
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .indexContent .indexTile {
+      padding: 0 25px;
+    }
+      .indexContent .indexTile .indexTileItem {
+        width: 100%;
+        max-width: 272px;
+      }
+        .indexContent .indexTile .indexTileItem a {
+          margin: 0 10px;
+          transition: none;
+        }
+        .indexContent .indexTile .indexTileItem a:hover {
+          opacity: 1;
+        }
+        .indexContent .indexTile .indexTileItem .pagename {
+          font-size: 1.4rem;
+        }
+  .indexNews {}
+    .indexNews .indexTile .moreLink {
+      margin-bottom: 40px;
+    }
+    .indexNews ul {}
+      .indexNews ul li {}
+        .indexNews ul li .date {
+          width: 8em;
+          margin-right: 0;
+          margin-bottom: 10px;
+        }
+        .indexNews ul li .category {
+          margin-bottom: 10px;
+        }
+        .indexNews ul li .title {
+          clear: both;
+          margin-left: 0;
+        }
+          .indexNews ul li .title a {
+            display: inline-block;
+            padding-right: 25px;
+            background: url(../img/common/nav_arw_black.svg) no-repeat right center / 6px 9px;
+          }
+          .indexNews ul li a.icoPDF,
+          .indexNews ul li a.linkPdf {
+            background-image: url(../img/common/ico_pdf.png);
+            background-size: 18px 16px;
+            min-height: 16px;
+          }
+          .indexNews ul li .icoPDF:after,
+          .indexNews ul li .linkPdf:after {
+            display: none;
+          }
+  /**
+   * --------------------------------------------------------------------------
+   * 見出し
+   * --------------------------------------------------------------------------
+   */
+  .headStyle01 {
+    font-size: 2.0rem;
+    line-height: 32px;
+    margin-bottom: 20px;
+  }
+  .headStyle02 {
+    font-size: 1.8rem;
+    line-height: 30px;
+  }
+  .mainContents .baseBlock p.copyTxt {
+    font-size: 2.4rem;
+  }
+  /**
+   * --------------------------------------------------------------------------
+   * テーブル
+   * --------------------------------------------------------------------------
+   */
+  .tableStyle01 {
+    display: block;
+  }
+    .tableStyle01 tbody,
+    .tableStyle01 tr,
+    .tableStyle01 th,
+    .tableStyle01 td {
+      display: block;
+    }
+
+    .tableStyle01 tbody th {
+      padding: 10px 0 5px 0;
+      background: none;
+    }
+    .tableStyle01 tbody th::before {
+      left: 0;
+    }
+    .tableStyle01 tbody td {
+      padding: 0 0 30px 0;
+      border-top: none;
+    }
+  .formTable {
+    display: block;
+    margin-bottom: 30px;
+  }
+    .formTable tbody,
+    .formTable tr,
+    .formTable th,
+    .formTable td {
+      display: block;
+      width: auto;
+    }
+    .formTable th {
+      padding: 0 20px;
+    }
+    .formTable.checked th {
+      margin-bottom: 10px;
+    }
+      .formTable th .icoRequire {
+        margin-left: 20px;
+        position: static;
+      }
+      .formTable th br {
+        display: none;
+      }
+    .formTable td {
+      padding: 15px 0;
+      border: none;
+      margin-bottom: 30px;
+    }
+    .formTable.checked td {
+      padding: 0 0 0 20px;
+    }
+      .formTable p.caption {
+        font-size: 1.3rem;
+        margin-bottom: 0 !important;
+      }
+      .formTable input.short {
+        width: 35%;
+      }
+      .formTable input.short2 {
+        width: 58%;
+      }
+      .formTable input.medium {
+        width: 100%;
+      }
+      .formTable select {
+        width: 100%;
+      }
+    .btnArea {
+      width: auto;
+      margin-top: 30px;
+    }
+      .btnArea .confirmBtn {
+        width: 140px;
+        margin: 0 10px;
+      }
+      .btnArea .submitBtn {
+        width: 140px;
+        margin: 0 10px;
+      }
+      .btnArea .inputBtn {
+        width: 100%;
+        max-width: 260px;
+      }
+        .btnArea input {
+          font-size: 1.5rem;
+          padding: 15px 0;
+        }
+  /**
+   * --------------------------------------------------------------------------
+   * ボックス
+   * --------------------------------------------------------------------------
+   */
+  .voxStyle01 {
+    padding: 30px;
+    margin: 50px 20px;
+  }
+  .columnVox {
+    display: block;
+  }
+    .columnVox .item {
+      width: auto;
+      margin-right: 0;
+      margin-bottom: 70px;
+    }
+      .columnVox .item figure {}
+        .columnVox .item figure figcaption {
+          font-size: 1.3rem;
+          line-height: 23px;
+        }
+  /**
+   * --------------------------------------------------------------------------
+   * セレクトリスト
+   * --------------------------------------------------------------------------
+   */
+  .selectList {}
+    .selectList .item {
+      width: 100%;
+      float: none;
+      margin-right: 0;
+      margin-bottom: 20px;
+    }
+    .selectList .item:last-of-type {
+      margin-bottom: 0;
+    }
+      .selectList .item select {
+        font-size: 1.3rem;
+      }
+
+  /**
+   * --------------------------------------------------------------------------
+   * アンカーリンク
+   * --------------------------------------------------------------------------
+   */
+  .anchorLink {
+    margin-bottom: 50px;
+  }
+    .anchorLink ul {
+      display: block;
+    }
+      .anchorLink ul li {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+      .anchorLink ul li:last-of-type {
+        margin-bottom: 0;
+      }
+  /**
+   * --------------------------------------------------------------------------
+   * タブ
+   * --------------------------------------------------------------------------
+   */
+  .tabVoxWrapper {
+    margin-bottom: 80px;
+  }
+  .tabs {}
+    .tabs li {
+      width: 32.3%;
+      margin-right: 1.5%;
+    }
+    .tabs li:nth-of-type(3n) {
+      margin-right: 0;
+    }
+      .tabs li a {
+        font-size: 1.5rem;
+        letter-spacing: 0.1em;
+        padding: 15px 0;
+      }
+  .tabVoxWrapper .tabContents {
+    padding-top: 30px;
+  }
+
+  /**
+   * --------------------------------------------------------------------------
+   * ボタン用スタイル
+   * --------------------------------------------------------------------------
+   */
+  .moreBtn {}
+    .moreBtn div,
+    .moreBtn a {
+      padding: 30px 0 0 40px;
+    }
+    .moreBtn a:hover {
+      opacity: 1;
+    }
+    .moreBtn div::before,
+    .moreBtn a::before {
+      width: 50px;
+      height: 50px;
+    }
+  .moreLink {
+  }
+    .moreLink a:hover {
+      opacity: 1;
+    }
+  /**
+   * --------------------------------------------------------------------------
+   * スクロールボックス
+   * --------------------------------------------------------------------------
+   */
+  .scrollVox {
+    padding-bottom: 10px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    overflow-scrolling: touch;
+  }
+  .scrollVox::-webkit-scrollbar {
+    height: 10px;
+  }
+  .scrollVox::-webkit-scrollbar-track {
+    background: #fff;
+    border-radius: 10px;
+  }
+  .scrollVox::-webkit-scrollbar-thumb {
+    background: #666;
+    border-radius: 10px;
+  }
+
+  .scrollVox table {
+    width: 940px;
+  }
+  /**
+   * --------------------------------------------------------------------------
+   * alphaBg
+   * --------------------------------------------------------------------------
+   */
+  #alphaBg {}
+    .popupWrapper .titleVox {
+      font-size: 1.2rem;
+      min-height: 40px;
+      height: auto;
+      line-height: 1.3;
+      padding: 10px 60px 10px 10px;
+    }
+    .popupWrapper .popupCloseBt {
+      padding: 0 30px 0 20px;
+    }
+    .popupWrapper a.popupCloseBt:before { display: none; }
+  /**
+   * --------------------------------------------------------------------------
+   * accordion
+   * --------------------------------------------------------------------------
+   */
+  .accordionWrapper {}
+    .accordionWrapper .accordionTtl {
+      font-size: 1.5rem;
+      padding-top: 30px;
+      padding-left: 20px;
+    }
+    .accordionWrapper .accordionInner {
+      padding-top: 30px;
+      padding-bottom: 30px;
+    }
+}
+
+/* ========================================================================
+   Header overrides (format-compliant: AISIN top bar + clean main row)
+   ======================================================================== */
+.globalHeader {
+  height: 160px !important;
+  border-bottom: 1px solid #e5e5e5;
+  position: fixed !important;
+  top: 0 !important;
+  left: 0 !important;
+  right: 0 !important;
+  width: 100% !important;
+  z-index: 60 !important;
+  background: #fff !important;
+}
+/* All pages: push wrapper down by header height to avoid overlap */
+body .wrapper {
+  padding-top: 160px;
+}
+/* AISIN GROUP top bar — minimal: logo only, right-aligned, no extras */
+.globalHeader #aisinLogo {
+  display: block !important;
+  text-align: right !important;
+  width: 100% !important;
+  height: 45px !important;
+  padding: 10px 20px !important;
+  background: #fff !important;
+  border-bottom: 1px solid #707070 !important;
+  position: absolute !important;
+  top: 0 !important;
+  left: 0 !important;
+  box-sizing: border-box !important;
+}
+.globalHeader #aisinLogo img {
+  width: 125px !important;
+  height: auto !important;
+  vertical-align: middle !important;
+}
+.globalHeader .globalHeaderInner {
+  display: block !important;
+  padding: 45px 40px 0 40px !important;
+  position: relative !important;
+  height: 100% !important;
+}
+.globalHeader .logo {
+  position: absolute !important;
+  left: 40px !important;
+  top: calc(50% + 22px) !important;
+  transform: translateY(-50%) !important;
+  width: 200px !important;
+  height: auto !important;
+  margin: 0 !important;
+}
+.globalHeader .logo img {
+  width: 100% !important;
+  height: auto !important;
+  display: block;
+}
+@media only screen and (min-width: 961px) {
+  .drawerMenu {
+    position: absolute !important;
+    right: 40px !important;
+    left: auto !important;
+    top: 45px !important;
+    bottom: 0 !important;
+    width: auto !important;
+    height: 115px !important;
+    overflow: visible !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+}
+.drawerMenu .megaNav {
+  display: flex !important;
+  justify-content: flex-end !important;
+  align-items: center !important;
+  height: 100% !important;
+}
+.megaNavParent {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: flex-end !important;
+  white-space: nowrap !important;
+  align-items: stretch !important;
+  height: 100%;
+}
+.megaNavParent > li {
+  flex: 0 0 auto !important;
+  white-space: nowrap !important;
+  margin: 0 !important;
+  display: flex;
+  align-items: center;
+}
+.megaNavParent > li > a {
+  white-space: nowrap !important;
+  padding: 0 10px !important;
+  font-size: 14px !important;
+  font-weight: 700 !important;
+  letter-spacing: 1px !important;
+  color: #000 !important;
+  height: 100%;
+  display: flex !important;
+  align-items: center;
+  position: relative;
+}
+.megaNavParent > li.tabActive > a,
+.megaNavParent > li.tbWideActive > a {
+  color: #000 !important;
+}
+/* underline indicator on hover/active */
+.megaNavParent > li > a::after {
+  content: "";
+  position: absolute;
+  left: 10px;
+  right: 10px;
+  bottom: 0;
+  height: 2px;
+  background: #006040;
+  transform: scaleX(0);
+  transform-origin: center;
+  transition: transform .2s ease;
+}
+.megaNavParent > li:hover > a::after,
+.megaNavParent > li.tabActive > a::after,
+.megaNavParent > li.tbWideActive > a::after {
+  transform: scaleX(1);
+}
+/* search button (right of nav) */
+.drawerMenu .megaNav .searchBtn {
+  width: auto !important;
+  margin: 0 0 0 12px !important;
+  display: flex !important;
+  align-items: center;
+  height: 100%;
+}
+.drawerMenu .megaNav .searchBtn a {
+  display: flex !important;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0 !important;
+  border-radius: 50%;
+  transition: background .2s ease;
+}
+.drawerMenu .megaNav .searchBtn a:hover {
+  background: #f0f0f0;
+}
+.drawerMenu .megaNav .searchBtn img {
+  width: 18px !important;
+  height: 18px;
+}
+/* megaNavSlide: aisin.com replica
+   - white background, full width
+   - left: parent name (large navy bold)
+   - right: stacked sub-links with bottom border + arrow */
+.megaNavSlide {
+  top: 160px !important;
+  background: #fff !important;
+  padding: 20px 135px 50px 40px !important;
+  border-top: none !important;
+  box-shadow: none !important;
+  width: 100% !important;
+  display: flex !important;
+  box-sizing: border-box !important;
+  z-index: 100 !important;
+  transform: translateY(-16px) !important;
+  transition: opacity 0.28s ease, transform 0.28s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0.28s !important;
+}
+.megaNavParent > li.parent:hover > .megaNavSlide,
+.megaNavParent > li.parent.megaOpen > .megaNavSlide,
+.megaNavParent > li.tabActive > .megaNavSlide,
+.megaNavParent > li.tbWideActive > .megaNavSlide {
+  transform: translateY(0) !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  transition: opacity 0.28s ease, transform 0.32s cubic-bezier(0.22, 0.61, 0.36, 1), visibility 0s linear 0s !important;
+}
+
+/* While menu is open and cursor switches between parents:
+   skip the slide-up/slide-down — only crossfade content. */
+.megaNavParent:has(> li.parent:hover) > li.parent > .megaNavSlide {
+  transform: translateY(0) !important;
+  transition: opacity 0.18s ease, transform 0s !important;
+}
+.megaNavParent:has(> li.parent:hover) > li.parent:not(:hover) > .megaNavSlide {
+  visibility: visible !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+}
+
+
+/* Stagger sub-link entrance */
+.megaNavSlide .megaNavContent > ul > li {
+  opacity: 0 !important;
+  transform: translateX(-8px) !important;
+  transition: opacity 0.3s ease, transform 0.35s cubic-bezier(0.22, 0.61, 0.36, 1) !important;
+  transition-delay: 0s !important;
+}
+/* When switching between siblings, sub-links appear instantly without stagger */
+.megaNavParent:has(> li.parent:hover) > li.parent:hover > .megaNavSlide .megaNavContent > ul > li {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+  transition: opacity 0.18s ease, transform 0s !important;
+  transition-delay: 0s !important;
+}
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li,
+.megaNavParent > li.parent.megaOpen > .megaNavSlide .megaNavContent > ul > li,
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li,
+.megaNavParent > li.tbWideActive > .megaNavSlide .megaNavContent > ul > li {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li:nth-child(1),
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li:nth-child(1) { transition-delay: 0.06s !important; }
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li:nth-child(2),
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li:nth-child(2) { transition-delay: 0.10s !important; }
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li:nth-child(3),
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li:nth-child(3) { transition-delay: 0.14s !important; }
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li:nth-child(4),
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li:nth-child(4) { transition-delay: 0.18s !important; }
+.megaNavParent > li.parent:hover > .megaNavSlide .megaNavContent > ul > li:nth-child(5),
+.megaNavParent > li.tabActive > .megaNavSlide .megaNavContent > ul > li:nth-child(5) { transition-delay: 0.22s !important; }
+.megaNavSlide::after {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  right: 0 !important;
+  bottom: -40px !important;
+  height: 40px !important;
+  pointer-events: none !important;
+  background: linear-gradient(to bottom, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%) !important;
+}
+
+/* Page dimmer when megamenu is open (CSS :has — modern browsers) */
+body::before {
+  content: "" !important;
+  position: fixed !important;
+  inset: 160px 0 0 0 !important;
+  background: rgba(0, 0, 0, 0.35) !important;
+  opacity: 0 !important;
+  pointer-events: none !important;
+  transition: opacity 0.25s ease !important;
+  z-index: 40 !important;
+}
+body:has(.megaNavParent > li.parent:hover)::before,
+body:has(.megaNavParent > li.parent.megaOpen)::before,
+body:has(.megaNavParent > li.tabActive)::before {
+  opacity: 1 !important;
+}
+.megaNavSlide .megaNavSlideInner {
+  display: flex !important;
+  width: 100% !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  overflow: visible !important;
+}
+/* Left column: parent name as big navy link */
+.megaNavSlide .megaNavHeader {
+  display: block !important;
+  width: 220px !important;
+  margin: 0 30px 0 0 !important;
+  padding-top: 0 !important;
+  border-right: none !important;
+  flex: 0 0 auto !important;
+}
+.megaNavSlide .megaNavHeader .navTtl {
+  display: block !important;
+  font-size: 20px !important;
+  font-weight: 800 !important;
+  color: #006040 !important;
+  letter-spacing: 1px !important;
+  margin-bottom: 0 !important;
+  border-top: 6px solid #006040 !important;
+  padding-top: 10px !important;
+}
+.megaNavSlide .megaNavHeader .navTtl span {
+  display: block !important;
+  font-size: inherit !important;
+}
+.megaNavSlide .megaNavHeader .more {
+  display: block !important;
+  margin-top: 12px !important;
+}
+.megaNavSlide .megaNavHeader .more > a {
+  display: inline-block !important;
+  padding: 4px 18px 4px 0 !important;
+  font-size: 13px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  color: #333 !important;
+  position: relative !important;
+  background: none !important;
+}
+.megaNavSlide .megaNavHeader .more > a::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 4px !important;
+  top: 50% !important;
+  width: 6px !important;
+  height: 6px !important;
+  border-top: 2px solid #006040 !important;
+  border-right: 2px solid #006040 !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+.megaNavSlide .megaNavHeader .more > a:hover {
+  opacity: .7 !important;
+  text-decoration: none !important;
+}
+
+/* Right column: sub-links rows with bottom border + > arrow */
+.megaNavSlide .megaNavContent {
+  flex: 1 1 auto !important;
+  width: auto !important;
+  max-width: none !important;
+  display: block !important;
+}
+.megaNavSlide .megaNavContent > ul {
+  display: block !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  gap: 0 !important;
+  width: 100% !important;
+}
+.megaNavSlide .megaNavContent > ul > li {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  border-bottom: 1px solid #e5e5e5 !important;
+  line-height: 1 !important;
+}
+.megaNavSlide .megaNavContent > ul > li > a {
+  display: block !important;
+  padding: 12px 25px 12px 15px !important;
+  font-size: 16px !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.5px !important;
+  color: #000 !important;
+  position: relative !important;
+  background: transparent !important;
+  white-space: nowrap !important;
+  transition: background .2s ease !important;
+}
+/* arrow indicator on right of each sub-link */
+.megaNavSlide .megaNavContent > ul > li > a::after {
+  content: "" !important;
+  position: absolute !important;
+  right: 18px !important;
+  top: 50% !important;
+  width: 8px !important;
+  height: 8px !important;
+  border-top: 2px solid #006040 !important;
+  border-right: 2px solid #006040 !important;
+  transform: translateY(-50%) rotate(45deg) !important;
+}
+.megaNavSlide .megaNavContent > ul > li > a:hover {
+  background: #f5f5f5 !important;
+  text-decoration: none !important;
+  opacity: 1 !important;
+}
+.megaNavParent > li.parent:hover > .megaNavSlide,
+.megaNavParent > li.tabActive > .megaNavSlide,
+.megaNavParent > li.tbWideActive > .megaNavSlide {
+  visibility: visible !important;
+  opacity: 1 !important;
+  z-index: 99 !important;
+}
+/* search overlay/area position adjust */
+.globalHeader .searchArea {
+  top: 160px !important;
+}
+
+/* Anchor color reset (avoid default blue links inside content) */
+.wrapper a:link,
+.wrapper a:visited {
+  color: #333;
+  text-decoration: none;
+}
+.wrapper a:hover {
+  text-decoration: underline;
+}
+
+/* News page: no sidebar -> #main occupies full width */
+body#news #main,
+body.news #main {
+  width: 100% !important;
+  float: none !important;
+}
+
+/* ========================================================================
+   TOP hero visual slider fix (v1 CSS conflict: negative margin + absolute)
+   ======================================================================== */
+body#home .wrapper,
+body.home .wrapper {
+  padding-top: 160px !important;
+}
+body#home #visual,
+body.home #visual {
+  width: 100% !important;
+  height: calc(100vh - 160px) !important;
+  margin-top: 0 !important;
+  position: relative !important;
+  z-index: 1 !important;
+  overflow: hidden;
+}
+body#home #visual ul.bxslider,
+body.home #visual ul.bxslider {
+  height: calc(100vh - 160px) !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+body#home #visual ul.bxslider li,
+body.home #visual ul.bxslider li {
+  height: calc(100vh - 160px) !important;
+  background-position: center center !important;
+  background-size: cover !important;
+  background-repeat: no-repeat !important;
+  position: relative;
+  display: block !important;
+  visibility: visible !important;
+}
+body#home #visual ul.bxslider li p,
+body.home #visual ul.bxslider li p {
+  z-index: 3 !important;
+}
+/* bxSlider viewport safeguards */
+body#home .bx-wrapper,
+body.home .bx-wrapper {
+  margin: 0 !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+}
+body#home .bx-wrapper .bx-viewport,
+body.home .bx-wrapper .bx-viewport {
+  height: calc(100vh - 160px) !important;
+  border: none !important;
+  box-shadow: none !important;
+  background: transparent !important;
+  left: 0 !important;
+}
+body#home #visual .newsScroll,
+body.home #visual .newsScroll {
+  position: absolute !important;
+  left: 50%;
+  bottom: 40px;
+  transform: translateX(-50%);
+  z-index: 4 !important;
+}
+
+/* Tablet / SP overrides */
+@media only screen and (max-width: 991px) {
+  body#home #visual,
+  body.home #visual,
+  body#home #visual ul.bxslider,
+  body.home #visual ul.bxslider,
+  body#home #visual ul.bxslider li,
+  body.home #visual ul.bxslider li,
+  body#home .bx-wrapper .bx-viewport,
+  body.home .bx-wrapper .bx-viewport {
+    height: 60vh !important;
+  }
+}
+
+/* ========================================================================
+   TOP page footer fix
+   home.css の body#home .wrapper { height:100% } と
+   v1 css/index.css の footer / #footer ルールが
+   v2 フッターマークアップを潰すので明示的に解除する
+   ======================================================================== */
+body#home .wrapper,
+body.home .wrapper {
+  height: auto !important;
+}
+body#home footer,
+body.home footer,
+body#home #footer,
+body.home #footer {
+  width: 100% !important;
+  min-width: 0 !important;
+  height: auto !important;
+  background: #333 !important;
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  position: relative !important;
+}
+body#home #footer .footInr,
+body.home #footer .footInr {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+}
+body#home #footer .footTop,
+body.home #footer .footTop,
+body#home #footer .footBottom,
+body.home #footer .footBottom,
+body#home #footer .footList,
+body.home #footer .footList,
+body#home #footer .snsVox,
+body.home #footer .snsVox {
+  display: block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+  height: auto !important;
+}
+body#home #footer .footList li,
+body.home #footer .footList li {
+  display: inline-block !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+body#home #footer .snsList,
+body.home #footer .snsList {
+  display: flex !important;
+  visibility: visible !important;
+  opacity: 1 !important;
+}
+
+/* ========================================================================
+   Footer SNS icons: unified 38x38 (match IG/YT/TT SVG size)
+   ======================================================================== */
+#footer .snsList {
+  display: flex !important;
+  align-items: center !important;
+  gap: 14px !important;
+  justify-content: flex-start !important;
+}
+#footer .snsVox .snsTtl {
+  text-align: left !important;
+}
+
+/* グローバルヘッダーの検索ボタンを全ページで非表示
+   既存の .drawerMenu .megaNav .searchBtn { display: flex !important } を上書きするため、
+   同等以上のセレクタ詳細度で指定 */
+.searchBtn,
+.drawerMenu .megaNav .searchBtn,
+.drawerMenu .megaNav .searchBtn a,
+.drawerMenu .megaNav .searchBtn img {
+  display: none !important;
+}
+#footer .snsList li {
+  width: 38px !important;
+  height: 38px !important;
+  margin: 0 !important;
+  list-style: none;
+  display: block !important;
+}
+#footer .snsList li a {
+  display: block !important;
+  width: 38px !important;
+  height: 38px !important;
+  line-height: 0;
+}
+#footer .snsList li img {
+  width: 38px !important;
+  height: 38px !important;
+  display: block !important;
+}
+
+/* ========================================================================
+   Module text-class overrides — beat v1 css/contents.css `#main h2/h3`
+   that injects #2e5b5f color and old font-sizes
+   ======================================================================== */
+#main h2.blockTtl {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 26px !important;
+  font-weight: 700 !important;
+  color: #006040 !important;
+  line-height: 44px !important;
+  border-bottom: none !important;
+  padding: 0 !important;
+  margin: 0 0 55px !important;
+}
+#main h3.headStyle01 {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 22px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  line-height: 38px !important;
+  padding: 0 0 0 23px !important;
+  margin: 0 0 30px !important;
+  background: none !important;
+  position: relative !important;
+}
+#main h3.headStyle01::before {
+  content: "" !important;
+  position: absolute !important;
+  left: 0 !important;
+  top: 0.4em !important;
+  width: 5px !important;
+  height: 22px !important;
+  background: #006040 !important;
+  border-radius: 1px !important;
+}
+#main h4.headStyle02 {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 20px !important;
+  font-weight: 700 !important;
+  color: #000 !important;
+  line-height: 36px !important;
+  padding: 0 0 0 20px !important;
+  margin: 0 0 30px !important;
+}
+#main p.pLarge,
+#main p.pSmall {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  color: #000 !important;
+  line-height: 1.9 !important;
+  margin: 0 0 40px !important;
+}
+
+/* All sub-pages: hide sidebar, make main full width */
+body#company #sidebar, body.company #sidebar,
+body#csr #sidebar, body.csr #sidebar,
+body#product #sidebar, body.product #sidebar,
+body#recruit #sidebar, body.recruit #sidebar,
+body#news #sidebar, body.news #sidebar {
+  display: none !important;
+}
+body#company #main, body.company #main,
+body#csr #main, body.csr #main,
+body#product #main, body.product #main,
+body#recruit #main, body.recruit #main,
+body#news #main, body.news #main {
+  width: 100% !important;
+  float: none !important;
+}
+
+/* Clear-fix for ul.list_img so following h2/h3 don't wrap next to floated items */
+#main ul.list_img {
+  overflow: hidden !important;
+  margin-bottom: 40px !important;
+}
+#main ul.list_img::after {
+  content: "" !important;
+  display: block !important;
+  clear: both !important;
+}
+
+/* Constrain large content images to container width */
+#main img.exWidth,
+#main .img img {
+  max-width: 100% !important;
+  height: auto !important;
+}
+
+/* List items in #main inherit pLarge-like body style */
+#main ul.listTypeDisc li,
+#main ul:not([class]) li,
+#main ol.listTypeNum li,
+#main ol:not([class]) li {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.9 !important;
+  color: #000 !important;
+}
+
+/* ========================================================================
+   tableStyle01 — key/value table (company info / specs)
+   行間はモジュールより狭め (20px→12px)
+   ======================================================================== */
+#main .tableStyle01 {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 16px !important;
+  margin: 0 0 40px !important;
+}
+#main .tableStyle01 th,
+#main .tableStyle01 td {
+  border-top: 1px solid #d4e6dd !important;
+  vertical-align: middle !important;
+  text-align: left !important;
+  line-height: 1.6 !important;
+}
+#main .tableStyle01 tr:last-child th,
+#main .tableStyle01 tr:last-child td {
+  border-bottom: 1px solid #d4e6dd !important;
+}
+#main .tableStyle01 th {
+  width: 20% !important;
+  padding: 12px 20px !important;
+  color: #006040 !important;
+  font-weight: 400 !important;
+  background: transparent !important;
+}
+#main .tableStyle01 td {
+  padding: 12px 20px !important;
+  color: #000 !important;
+}
+
+/* ========================================================================
+   tableStyle02 — multi-column data table
+   ======================================================================== */
+#main .tableStyle02 {
+  width: 100% !important;
+  border-collapse: collapse !important;
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 14px !important;
+  margin: 0 0 40px !important;
+}
+#main .tableStyle02 th {
+  background: #006040 !important;
+  color: #fff !important;
+  font-weight: 700 !important;
+  text-align: center !important;
+  padding: 14px 20px !important;
+  border: none !important;
+  line-height: 1.5 !important;
+}
+#main .tableStyle02 td {
+  background: #fff !important;
+  color: #000 !important;
+  text-align: center !important;
+  padding: 14px 20px !important;
+  border-bottom: 1px solid #d4e6dd !important;
+  border-left: 1px solid #d4e6dd !important;
+  line-height: 1.5 !important;
+  vertical-align: middle !important;
+}
+#main .tableStyle02 td:last-child {
+  border-right: 1px solid #d4e6dd !important;
+}
+#main .tableStyle02 tbody tr:nth-child(odd) td {
+  background: #f0f7f3 !important;
+}
+
+/* ========================================================================
+   dl.list_table → tableStyle01 等価表示 (Grid)
+   ======================================================================== */
+#main dl.list_table {
+  display: grid !important;
+  grid-template-columns: 20% 1fr !important;
+  width: 100% !important;
+  margin: 0 0 40px !important;
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 16px !important;
+  border-top: 1px solid #d4e6dd !important;
+}
+#main dl.list_table dt,
+#main dl.list_table dd {
+  padding: 12px 20px !important;
+  border-bottom: 1px solid #d4e6dd !important;
+  margin: 0 !important;
+  line-height: 1.6 !important;
+  background: transparent !important;
+  vertical-align: middle !important;
+}
+#main dl.list_table dt {
+  color: #006040 !important;
+  font-weight: 400 !important;
+}
+#main dl.list_table dd {
+  color: #000 !important;
+}
+
+/* dl.list_table_history のフォントを他ページ本文に合わせる */
+#main dl.list_table_history,
+#main dl.list_table_history dt,
+#main dl.list_table_history dd {
+  font-family: "Yu Gothic", "游ゴシック Medium", YuGothic, 游ゴシック体, "ヒラギノ角ゴ Pro W3", メイリオ, sans-serif !important;
+  font-size: 16px !important;
+  line-height: 1.9 !important;
+}
+
+/* TOP page: movie section full-width (no v1 sidebar) */
+body#home #contents,
+body.home #contents {
+  width: 100% !important;
+  max-width: 100% !important;
+  margin: 0 !important;
+  padding: 60px 5% !important;
+  box-sizing: border-box !important;
+}
+body#home #contents #main,
+body.home #contents #main {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  float: none !important;
+  padding: 0 !important;
+}
+body#home #movie,
+body.home #movie {
+  width: 100% !important;
+  float: none !important;
+}
+body#home #movie video,
+body.home #movie video {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 30px auto !important;
+}
+body#home #movie .pLarge,
+body.home #movie .pLarge {
+  text-align: center !important;
+  margin-bottom: 50px !important;
+}
+
+/* ========================================================================
+   #bnr (parent company links) — visible on every page, all breakpoints
+   ======================================================================== */
+#bnr {
+  display: block !important;
+  width: 100% !important;
+  background: transparent !important;
+  padding: 24px 0 !important;
+  margin: 0 !important;
+}
+#bnr > div {
+  max-width: 1100px !important;
+  margin: 0 auto !important;
+  padding: 0 20px !important;
+}
+#bnr ul {
+  display: flex !important;
+  flex-wrap: wrap !important;
+  justify-content: center !important;
+  gap: 20px !important;
+  list-style: none !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+#bnr ul li {
+  flex: 0 1 auto !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  background: transparent !important;
+  width: auto !important;
+  float: none !important;
+}
+#bnr ul li a {
+  display: block !important;
+  transition: opacity 0.2s ease !important;
+}
+#bnr ul li a:hover { opacity: 0.75 !important; }
+#bnr ul li a img {
+  display: block !important;
+  width: 220px !important;
+  max-width: 100% !important;
+  height: auto !important;
+}
+@media only screen and (max-width: 991px) {
+  #bnr ul li a img { width: 180px !important; }
+}
+@media only screen and (max-width: 767px) {
+  #bnr { padding: 16px 0 !important; }
+  #bnr ul { gap: 10px !important; }
+  #bnr ul li { width: 45% !important; }
+  #bnr ul li a img { width: 100% !important; }
+}
+
+/* ========================================================================
+   Mobile (≤960px) header overrides — keep visual consistency with PC
+   ======================================================================== */
+@media only screen and (max-width: 960px) {
+  /* Header total stays 92-93px; AISIN bar 32px + main 60px */
+  .globalHeader {
+    height: 100px !important;
+  }
+  .globalHeader #aisinLogo {
+    height: 45px !important;
+    padding: 10px 20px !important;
+  }
+  .globalHeader #aisinLogo img {
+    width: 125px !important;
+  }
+  .globalHeader .globalHeaderInner {
+    padding: 45px 16px 0 16px !important;
+    height: 100% !important;
+  }
+  .globalHeader .logo {
+    position: absolute !important;
+    left: 16px !important;
+    top: calc(50% + 22px) !important;
+    transform: translateY(-50%) !important;
+    width: 168px !important;
+    z-index: 60 !important;
+  }
+  .globalHeader .logo img {
+    width: 100% !important;
+    height: auto !important;
+  }
+
+  /* Hamburger button on right */
+  #acdBtn {
+    position: absolute !important;
+    right: 16px !important;
+    top: calc(50% + 22px) !important;
+    transform: translateY(-50%) !important;
+    width: 32px !important;
+    height: 32px !important;
+    cursor: pointer !important;
+    z-index: 70 !important;
+  }
+  #acdBtn .btnDesign {
+    position: absolute !important;
+    left: 4px !important;
+    width: 24px !important;
+    height: 2px !important;
+    background: #006040 !important;
+    transition: transform 0.25s ease, top 0.25s ease, opacity 0.2s ease !important;
+  }
+  #acdBtn .btnTop { top: 8px !important; }
+  #acdBtn .btnMdl { top: 15px !important; }
+  #acdBtn .btnBom { top: 22px !important; }
+  #acdBtn.spActive .btnTop { top: 15px !important; transform: rotate(45deg) !important; }
+  #acdBtn.spActive .btnMdl { opacity: 0 !important; }
+  #acdBtn.spActive .btnBom { top: 15px !important; transform: rotate(-45deg) !important; }
+
+  /* Drawer slide panel (right-to-left) */
+  .drawerMenu {
+    position: fixed !important;
+    top: 100px !important;
+    left: 100%;
+    right: auto !important;
+    width: 100% !important;
+    height: calc(100vh - 100px) !important;
+    padding: 0 0 60px 0 !important;
+    background: #fff !important;
+    z-index: 55 !important;
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch !important;
+    display: block !important;
+    box-sizing: border-box !important;
+    transition: left 0.3s ease !important;
+  }
+  .drawerMenu.spActive {
+    left: 0 !important;
+  }
+
+  /* Stack nav items vertically inside drawer */
+  .drawerMenu .megaNav {
+    display: block !important;
+    height: auto !important;
+  }
+  .megaNavParent {
+    display: block !important;
+    flex-direction: column !important;
+    height: auto !important;
+    width: 100% !important;
+    padding: 0 !important;
+  }
+  .megaNavParent > li {
+    display: block !important;
+    width: 100% !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+  }
+  .megaNavParent > li > a {
+    display: block !important;
+    width: 100% !important;
+    padding: 18px 24px !important;
+    font-size: 16px !important;
+    font-weight: 700 !important;
+    letter-spacing: 0.5px !important;
+    color: #000 !important;
+  }
+  .megaNavParent > li > a::after { display: none !important; }
+
+  /* Megamenu sub-panels: inline (accordion-like) inside drawer, no fixed slide */
+  .megaNavSlide {
+    position: static !important;
+    visibility: visible !important;
+    opacity: 1 !important;
+    width: 100% !important;
+    background: #f7faf8 !important;
+    padding: 12px 24px 16px !important;
+    box-shadow: none !important;
+    transform: none !important;
+    z-index: auto !important;
+    display: block !important;
+  }
+  .megaNavSlide::after { display: none !important; }
+  .megaNavSlide .megaNavSlideInner {
+    display: block !important;
+    padding: 0 !important;
+  }
+  .megaNavSlide .megaNavHeader { display: none !important; }
+  .megaNavSlide .megaNavContent {
+    display: block !important;
+    width: 100% !important;
+  }
+  .megaNavSlide .megaNavContent > ul {
+    display: block !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .megaNavSlide .megaNavContent > ul > li {
+    border-bottom: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
+  }
+  .megaNavSlide .megaNavContent > ul > li > a {
+    padding: 10px 8px !important;
+    font-size: 14px !important;
+    font-weight: 500 !important;
+  }
+  .megaNavSlide .megaNavContent > ul > li > a::after {
+    right: 8px !important;
+    width: 6px !important;
+    height: 6px !important;
+  }
+
+  /* Search button in mobile drawer */
+  .drawerMenu .megaNav .searchBtn {
+    margin: 0 !important;
+    padding: 18px 24px !important;
+    border-bottom: 1px solid #e5e5e5 !important;
+  }
+  .drawerMenu .megaNav .searchBtn a {
+    width: auto !important;
+    height: auto !important;
+    padding: 0 !important;
+    border-radius: 0 !important;
+    background: transparent !important;
+    display: flex !important;
+    align-items: center !important;
+  }
+  .drawerMenu .megaNav .searchBtn img {
+    width: 20px !important;
+    height: 20px !important;
+    margin-right: 12px !important;
+  }
+  .drawerMenu .megaNav .searchBtn a::after {
+    content: "サイト内検索" !important;
+    font-size: 14px !important;
+    font-weight: 700 !important;
+    color: #000 !important;
+  }
+
+  /* Page dimmer hides on SP — drawer takes over the screen */
+  body::before { display: none !important; }
+
+  /* Wrapper push for fixed header */
+  body .wrapper { padding-top: 100px !important; }
+  body#home .wrapper, body.home .wrapper { padding-top: 100px !important; }
+}
+
+/* ========================================================================
+   TOP page hero — 2 stations overlaying a fixed slideshow
+   Station 1: hero copy (この先も共に「良い明日」を作り続ける)
+   Station 2: 4 page links (会社案内 → 製品 → CSR → 採用情報)
+   ======================================================================== */
+body#home #visual,
+body.home #visual {
+  position: relative !important;
+  height: calc((100vh - 160px) * 2) !important;
+  overflow: visible !important;
+  z-index: 1 !important;
+}
+body#home #visual .bx-wrapper,
+body.home #visual .bx-wrapper {
+  position: fixed !important;
+  top: 160px !important;
+  left: 0 !important;
+  width: 100vw !important;
+  height: calc(100vh - 160px) !important;
+  z-index: 0 !important;
+  margin: 0 !important;
+}
+body#home #visual .bx-viewport,
+body.home #visual .bx-viewport {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+/* Station 1: hero copy */
+body#home #visual .heroCopy,
+body.home #visual .heroCopy {
+  position: relative !important;
+  z-index: 2 !important;
+  height: calc(100vh - 160px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 0 8% !important;
+  pointer-events: none;
+}
+body#home #visual .heroLine,
+body.home #visual .heroLine {
+  font-family: "Noto Serif JP", "Yu Mincho", "游明朝", YuMincho, "ヒラギノ明朝 ProN", serif !important;
+  font-weight: 500 !important;
+  letter-spacing: 0.08em !important;
+  color: #fff !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  margin: 0 !important;
+  line-height: 1.15 !important;
+}
+body#home #visual .heroLineTop,
+body.home #visual .heroLineTop,
+body#home #visual .heroLineBot,
+body.home #visual .heroLineBot {
+  font-size: clamp(22px, 2.4vw, 36px) !important;
+}
+body#home #visual .heroLineMain,
+body.home #visual .heroLineMain {
+  font-size: clamp(66px, 7.2vw, 108px) !important;
+  margin: 12px 0 !important;
+}
+
+/* Station 2: 4 page links — appears after scrolling past hero copy */
+body#home #visual .heroLabels,
+body.home #visual .heroLabels {
+  position: relative !important;
+  z-index: 2 !important;
+  height: calc(100vh - 160px) !important;
+  display: flex !important;
+  flex-direction: column !important;
+  justify-content: center !important;
+  padding: 0 8% !important;
+  pointer-events: none;
+}
+body#home #visual .heroLabel,
+body.home #visual .heroLabel {
+  font-family: "Noto Serif JP", "Yu Mincho", "游明朝", YuMincho, "ヒラギノ明朝 ProN", serif !important;
+  font-weight: 500 !important;
+  font-size: clamp(36px, 5.5vw, 84px) !important;
+  line-height: 1.4 !important;
+  letter-spacing: 0.06em !important;
+  color: #fff !important;
+  text-shadow: 0 4px 24px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.4) !important;
+  text-decoration: none !important;
+  margin: 4px 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  width: max-content !important;
+  pointer-events: auto;
+  transition: transform 0.3s ease, opacity 0.3s ease !important;
+}
+body#home #visual .heroLabel .arr,
+body.home #visual .heroLabel .arr {
+  display: inline-block !important;
+  width: 0.45em !important;
+  height: 0.45em !important;
+  margin-left: 0.55em !important;
+  border: 0 solid #fff !important;
+  border-top-width: 4px !important;
+  border-right-width: 4px !important;
+  border-bottom: none !important;
+  border-left: none !important;
+  background: transparent !important;
+  transform: rotate(45deg) !important;
+  transition: margin-left 0.3s ease !important;
+  filter: drop-shadow(0 2px 8px rgba(0,0,0,0.5));
+}
+body#home #visual .heroLabel:hover .arr,
+body.home #visual .heroLabel:hover .arr {
+  margin-left: 0.85em !important;
+}
+body#home #visual .heroLabel:hover,
+body.home #visual .heroLabel:hover {
+  transform: translateX(10px) !important;
+  opacity: 0.9 !important;
+}
+body#home #visual .heroLabel:hover .arr,
+body.home #visual .heroLabel:hover .arr {
+  transform: rotate(45deg) translate(2px, -2px) !important;
+}
+/* news/contents/footer/bnr/noticeSection sit above the fixed slideshow on TOP page */
+body#home .newsSection,
+body.home .newsSection,
+body#home .noticeSection,
+body.home .noticeSection,
+body#home #contents,
+body.home #contents,
+body#home #bnr,
+body.home #bnr,
+body#home #footer,
+body.home #footer {
+  position: relative !important;
+  z-index: 5 !important;
+}
+body#home .newsSection,
+body.home .newsSection {
+  background: #eef5ef !important;
+}
+body#home .noticeSection,
+body.home .noticeSection {
+  background: #fff !important;
+}
+body#home #contents,
+body.home #contents {
+  background: #fff !important;
+}
+body#home #bnr,
+body.home #bnr {
+  background: #fff !important;
+}
+body#home #footer,
+body.home #footer {
+  background: #333 !important;
+}
+/* mobile (≤960px): keep hero stations stacked, slightly smaller fonts */
+@media only screen and (max-width: 960px) {
+  body#home #visual,
+  body.home #visual {
+    height: calc((100vh - 100px) * 2) !important;
+  }
+  body#home #visual .bx-wrapper,
+  body.home #visual .bx-wrapper {
+    position: fixed !important;
+    top: 100px !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: calc(100vh - 100px) !important;
+  }
+  body#home #visual .heroLineTop,
+  body.home #visual .heroLineTop,
+  body#home #visual .heroLineBot,
+  body.home #visual .heroLineBot {
+    font-size: 16px !important;
+  }
+  body#home #visual .heroLineMain,
+  body.home #visual .heroLineMain {
+    font-size: 48px !important;
+  }
+  body#home #visual .heroLabel,
+  body.home #visual .heroLabel {
+    font-size: 28px !important;
+  }
+}
+
+/* TOP page noticeSection: title left-aligned, moreLink right-aligned */
+body#home .noticeSection .noticeHeader,
+body.home .noticeSection .noticeHeader {
+  text-align: left !important;
+}
+body#home .noticeSection .noticeTtl,
+body.home .noticeSection .noticeTtl {
+  text-align: left !important;
+  margin: 0 !important;
+}
+body#home .noticeSection .moreLink,
+body.home .noticeSection .moreLink {
+  text-align: right !important;
+}
+
+/* ========================================================================
+   Ken-burns animation for hero slideshow (slow zoom-out)
+   ======================================================================== */
+body#home #visual .bxslider > li,
+body.home #visual .bxslider > li {
+  position: relative !important;
+  overflow: hidden !important;
+  background: none !important;
+}
+/* Pure CSS slideshow with crossfade + ken-burns
+   Cycle = 49s total (7 slides × 7s each).
+   Each slide is opacity-1 for ~5.5s, with 1.5s crossfade overlap to next. */
+body#home #visual .cssSlideshow,
+body.home #visual .cssSlideshow {
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  background: #000 !important;
+}
+body#home #visual .cssSlideshow > li,
+body.home #visual .cssSlideshow > li {
+  position: absolute !important;
+  inset: 0 !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none !important;
+  overflow: hidden !important;
+  opacity: 0;
+  background: #000;
+  animation: cssSlideFade 49s infinite;
+}
+body#home #visual .cssSlideshow > li:nth-child(1),
+body.home #visual .cssSlideshow > li:nth-child(1) { animation-delay: 0s; }
+body#home #visual .cssSlideshow > li:nth-child(2),
+body.home #visual .cssSlideshow > li:nth-child(2) { animation-delay: 7s; }
+body#home #visual .cssSlideshow > li:nth-child(3),
+body.home #visual .cssSlideshow > li:nth-child(3) { animation-delay: 14s; }
+body#home #visual .cssSlideshow > li:nth-child(4),
+body.home #visual .cssSlideshow > li:nth-child(4) { animation-delay: 21s; }
+body#home #visual .cssSlideshow > li:nth-child(5),
+body.home #visual .cssSlideshow > li:nth-child(5) { animation-delay: 28s; }
+body#home #visual .cssSlideshow > li:nth-child(6),
+body.home #visual .cssSlideshow > li:nth-child(6) { animation-delay: 35s; }
+body#home #visual .cssSlideshow > li:nth-child(7),
+body.home #visual .cssSlideshow > li:nth-child(7) { animation-delay: 42s; }
+/* total cycle = 49s; each slide visible ~7s with 1.5s crossfade overlap */
+@keyframes cssSlideFade {
+  0%      { opacity: 0; z-index: 2; }
+  3.06%   { opacity: 1; z-index: 2; }   /* fade in 0-1.5s */
+  14.29%  { opacity: 1; z-index: 2; }   /* hold until 7s */
+  17.35%  { opacity: 0; z-index: 1; }   /* fade out 7-8.5s — overlaps next */
+  100%    { opacity: 0; z-index: 1; }
+}
+body#home #visual .cssSlideshow > li .kbImg,
+body.home #visual .cssSlideshow > li .kbImg {
+  position: absolute !important;
+  inset: 0 !important;
+  background-size: cover !important;
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  transform: scale(1.18);
+  animation: cssSlideKb 49s infinite;
+  will-change: transform;
+}
+body#home #visual .cssSlideshow > li:nth-child(1) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(1) .kbImg { animation-delay: 0s; }
+body#home #visual .cssSlideshow > li:nth-child(2) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(2) .kbImg { animation-delay: 7s; }
+body#home #visual .cssSlideshow > li:nth-child(3) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(3) .kbImg { animation-delay: 14s; }
+body#home #visual .cssSlideshow > li:nth-child(4) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(4) .kbImg { animation-delay: 21s; }
+body#home #visual .cssSlideshow > li:nth-child(5) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(5) .kbImg { animation-delay: 28s; }
+body#home #visual .cssSlideshow > li:nth-child(6) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(6) .kbImg { animation-delay: 35s; }
+body#home #visual .cssSlideshow > li:nth-child(7) .kbImg,
+body.home #visual .cssSlideshow > li:nth-child(7) .kbImg { animation-delay: 42s; }
+@keyframes cssSlideKb {
+  0%      { transform: scale(1.18); }
+  17.35%  { transform: scale(1.0); }   /* zoom-out completes as fade-out finishes */
+  100%    { transform: scale(1.0); }
+}
+
+/* ========================================================================
+   Movie section: scroll-triggered float-in, white background card
+   ======================================================================== */
+body#home #contents,
+body.home #contents {
+  background: #fff !important;
+  padding: 80px 5% 100px !important;
+}
+body#home #movie .blockTtl,
+body.home #movie .blockTtl {
+  text-align: center !important;
+  margin-bottom: 40px !important;
+}
+body#home #movie video,
+body.home #movie video {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto 14px auto !important;
+  border-radius: 6px !important;
+  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12), 0 4px 10px rgba(0, 0, 0, 0.06) !important;
+  background: #000 !important;
+}
+body#home #movie .pLarge,
+body.home #movie .pLarge {
+  text-align: center !important;
+  margin-bottom: 70px !important;
+  font-size: 14px !important;
+  color: #555 !important;
+}
+/* Float-in entries — toggled by JS via .is-visible */
+body#home #movie video,
+body.home #movie video,
+body#home #movie .pLarge,
+body.home #movie .pLarge,
+body#home #movie .blockTtl,
+body.home #movie .blockTtl {
+  opacity: 0;
+  transform: translateY(48px);
+  transition: opacity 0.9s ease, transform 0.9s cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+body#home #movie .is-visible,
+body.home #movie .is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}

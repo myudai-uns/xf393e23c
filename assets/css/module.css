@@ -1,0 +1,29 @@
+@charset "UTF-8";
+@import url(https://fonts.googleapis.com/css?family=Open+Sans:400,700,300);
+/* ---------------------------------------------------------------- *
+
+  コーディング規約参考：http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml
+                        http://www.cyberagent.co.jp/recruit/techreport/report/
+
+----------------------------------------------------------------- */
+/*
+ * module.css
+ */
+body#module {}
+  body#module .box {
+    margin-bottom: 100px;
+  }
+    body#module .box > ol,
+    body#module .box > ul,
+    body#module .box > table,
+    body#module .box > p {
+      margin-bottom: 40px;
+    }
+
+
+/* ---------------------------------------------------------------- *
+    スマートフォン・タブレット（960px未満）
+----------------------------------------------------------------- */
+@media only screen and (max-width: 960px) {
+  body#module {}
+}

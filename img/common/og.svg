@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="630" viewBox="0 0 1200 630">
+  <rect width="1200" height="630" fill="#2e5b5f"/>
+  <text x="600" y="280" text-anchor="middle" fill="#ffffff" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="700" letter-spacing="4">AISIN TAKAOKA</text>
+  <text x="600" y="340" text-anchor="middle" fill="#ffffff" font-family="'Helvetica Neue', Arial, sans-serif" font-size="48" font-weight="400" letter-spacing="4">TOHOKU</text>
+  <line x1="480" y1="370" x2="720" y2="370" stroke="#6cb130" stroke-width="3"/>
+  <text x="600" y="410" text-anchor="middle" fill="#cccccc" font-family="'Helvetica Neue', Arial, sans-serif" font-size="18" font-weight="300" letter-spacing="1">aisin-takaoka-tohoku.co.jp</text>
+</svg>
