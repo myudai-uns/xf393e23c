@@ -354,9 +354,9 @@ ul, ol { list-style: none; }
   border-radius: 50%;
   background: var(--c-yellow-soft);
   color: var(--c-dark);
-  font-size: 28px;
+  font-size: 19px;     /* 円(150px)内に収まるサイズ */
   font-weight: 700;
-  line-height: 0.85;   /* 行間を0.5倍（1.7→0.85） */
+  line-height: 1.25;   /* 行が重ならないよう確保 */
   letter-spacing: .06em;
   display: flex;
   align-items: center;
@@ -1954,4 +1954,9 @@ body.rwd .btn-white, body.rwd .btn-dark, body.rwd .btn-yellow { max-width: 100%;
   body.rwd .form-row { flex-direction: column; align-items: stretch; gap: 4px; }
   body.rwd .form-row .f-label { width: auto; }
   body.rwd .mynavi-row { flex-direction: column; align-items: flex-start; gap: 10px; }
+}
+
+/* フロートCTA：スマホ時は円を6割（150→90px）＋文字も縮小して円内に収める */
+@media (max-width: 767px) {
+  body.rwd .top-hero .hero-cta { width: 90px; height: 90px; font-size: 11.5px; line-height: 1.2; }
 }
