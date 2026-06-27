@@ -2010,3 +2010,20 @@ body.rwd .recruit-persona .persona, body.rwd .persona-card { max-width: 92vw; }
   body.rwd .people-voice,
   body.rwd .recruit-persona { padding-left: 16px; padding-right: 16px; }
 }
+
+/* ============================================================
+   スマホ崩れ修正（追補2）：INTERVIEW CARDS / 地図ボタン / FV確実充填
+   ============================================================ */
+body.rwd .pc-grid { width: min(872px, 92vw); }   /* 6人カードの固定872pxを流動化 */
+
+@media (max-width: 992px) {
+  body.rwd .pc-grid { grid-template-columns: repeat(2, 1fr); gap: 32px 24px; }
+}
+@media (max-width: 767px) {
+  body.rwd .pc-grid { grid-template-columns: 1fr 1fr; gap: 22px 14px; }
+  body.rwd .pc-card img { height: 46vw; }
+  body.rwd .access-map .btn-map { width: 86%; max-width: 452px; font-size: 13.5px; }
+  /* FV：スマホでは cover＋固定高でカラムを確実に充填（隙間/崩れ防止）。トラックがヒーローより高くなりループも滑らか */
+  body.rwd .top-hero { height: 78vh; }
+  body.rwd .top-hero .tile img { height: 150px; object-fit: cover; }
+}
