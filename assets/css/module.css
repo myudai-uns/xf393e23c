@@ -33,3 +33,9 @@ body#module {}
   html, body { overflow-x: hidden !important; max-width: 100vw !important; }
   .drawerMenu, .megaNav, .megaNavParent { max-width: 100vw !important; }
 }
+
+/* AISIN: モバイルで本文コンテナをborder-box化（#mainの幅+paddingで右見切れ防止） */
+@media only screen and (max-width: 768px){
+  #wrapper, #container, #contents, #main, #main *, .contents, article { box-sizing: border-box !important; }
+  #main { width: 100% !important; max-width: 100% !important; }
+}
