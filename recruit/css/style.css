@@ -2087,5 +2087,5 @@ body.rwd .recruit-entry-btn a { width: min(645px, 90vw); }
   /* OUR WORK：3工程を縦積み＋矢印を下向きに */
   body.rwd .top-work .work-flow { flex-direction: column; flex-wrap: nowrap; align-items: center; gap: 8px; }
   body.rwd .top-work .work-item { width: 100%; max-width: 320px; }
-  body.rwd .top-work .work-arrow { transform: rotate(90deg); margin: 2px 0; }
+  body.rwd .top-work .work-arrow { align-self: center; transform: rotate(90deg); margin: 2px 0; }
 }
