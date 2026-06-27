@@ -39,3 +39,8 @@ body#module {}
   #wrapper, #container, #contents, #main, #main *, .contents, article { box-sizing: border-box !important; }
   #main { width: 100% !important; max-width: 100% !important; }
 }
+
+/* AISIN: 製品ページの部品図をモバイルで縮小して右見切れ防止 */
+@media only screen and (max-width: 768px){
+  body#product .img:has(.img_product){ transform: scale(.9); transform-origin: center top; }
+}
