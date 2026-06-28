@@ -4097,3 +4097,10 @@ body.home #movie .is-visible {
 @media only screen and (min-width:768px){
   .newsList .entryVox .title{ flex-basis:auto; }
 }
+
+/* AISIN: PCメガナビのホバー展開（マウスオーバー時のみ表示）を廃止＝ドロップダウン非表示・トップ項目は直接リンク */
+@media only screen and (min-width: 961px){
+  .megaNavParent > li > .megaNavSlide,
+  .megaNavParent > li:hover > .megaNavSlide,
+  .megaNavParent > li:hover li:hover > .megaNavSlide { display: none !important; }
+}
