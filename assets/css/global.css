@@ -4086,3 +4086,14 @@ body.home #movie .is-visible {
   .megaNavParent > li.parent.spActive > a { background-image: none !important; }
   .megaNavParent > li > .megaNavSlide { display: block !important; }
 }
+
+/* AISIN: 新着情報一覧をTOPのお知らせと同体裁に（newsページ用・モバイル安全）。PCはTOPのbody#home規則が優先 */
+.newsList .entryVox{ display:flex; flex-wrap:wrap; align-items:center; gap:8px 14px; padding:16px 0; border-bottom:1px solid #e3e3e3; margin:0; overflow:visible; }
+.newsList .entryVox time{ font-weight:bold; font-size:1.4rem; color:#333; width:auto; float:none; margin:0; }
+.newsList .entryVox .category{ color:#fff; background:#333; font-size:1.2rem; line-height:1; text-align:center; padding:5px 12px; border-radius:4px; white-space:nowrap; width:auto; float:none; }
+.newsList .entryVox .title{ flex-basis:100%; margin:0; }
+.newsList .entryVox .title a{ color:#000; text-decoration:none; font-size:1.5rem; }
+.newsList .entryVox .title a:hover{ opacity:.7; }
+@media only screen and (min-width:768px){
+  .newsList .entryVox .title{ flex-basis:auto; }
+}
