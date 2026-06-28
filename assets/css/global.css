@@ -4080,8 +4080,8 @@ body.home #movie .is-visible {
   .drawerMenu .megaNav .snsList li{ margin:0 !important; width:auto !important; }
 }
 
-/* AISIN: ハンバーガーのアコーディオン廃止＝常時全展開＋ +/- アイコン撤去（モバイル≤960） */
-@media only screen and (max-width: 960px){
+/* AISIN: 【スマホ≤767のみ】ハンバーガーのアコーディオン廃止＝常時全展開＋ +/- 撤去。768px以上(タブレット/PC)はnative（他項目が消えてOK） */
+@media only screen and (max-width: 767px){
   .megaNavParent > li.parent > a,
   .megaNavParent > li.parent.spActive > a { background-image: none !important; }
   .megaNavParent > li > .megaNavSlide { display: block !important; }
@@ -4098,20 +4098,42 @@ body.home #movie .is-visible {
   .newsList .entryVox .title{ flex-basis:auto; }
 }
 
-/* AISIN: PCメガナビのホバー展開（マウスオーバー時のみ表示）を廃止＝ドロップダウン非表示・トップ項目は直接リンク */
-@media only screen and (min-width: 961px){
-  .megaNavParent > li > .megaNavSlide,
-  .megaNavParent > li:hover > .megaNavSlide,
-  .megaNavParent > li:hover li:hover > .megaNavSlide { display: none !important; }
+/* AISIN: 【スマホ≤767のみ】ドロワーのサブメニュー常時展開。768px以上は触らない */
+@media only screen and (max-width: 767px){
+  .drawerMenu .megaNavParent > li > .megaNavSlide { display: block !important; visibility: visible !important; opacity: 1 !important; }
 }
 
-/* AISIN: ハンバーガー/メガナビでホバー時に他項目が消える・片方だけ表示される挙動を完全無効化（全項目を常時表示） */
-.megaNavParent > li,
-.megaNavParent > li > a { opacity: 1 !important; visibility: visible !important; }
-@media only screen and (min-width: 961px){
-  .megaNavParent > li:hover > .megaNavSlide,
-  .megaNavParent > li:hover li:hover > .megaNavSlide { display: none !important; visibility: hidden !important; opacity: 0 !important; }
+/* ============================================================
+   AISIN: メガナビ根本対応
+   - mask(黒0.4オーバーレイ)を完全無効化 → ドロワー開閉・ページ遷移後の黒フェード被りを防止
+   - 【スマホ≤767のみ】全セクション/全サブ項目をJS(hover/tab)に関わらず常時表示で固定（他項目を消さない）。768px以上はnative 
+   ============================================================ */
+.mask { display: none !important; }
+@media only screen and (max-width: 767px){
+  .drawerMenu .megaNavParent > li,
+  .drawerMenu .megaNavParent > li > .megaNavSlide,
+  .drawerMenu .megaNavSlide,
+  .drawerMenu .megaNavSlideInner,
+  .drawerMenu .megaNavContent,
+  .drawerMenu .megaNavContent ul { display: block !important; visibility: visible !important; opacity: 1 !important; height: auto !important; }
+  .drawerMenu .megaNavContent li { display: block !important; visibility: visible !important; opacity: 1 !important; }
+  .drawerMenu .megaNavContent a { visibility: visible !important; opacity: 1 !important; }
 }
-@media only screen and (max-width: 960px){
-  .drawerMenu .megaNavParent > li > .megaNavSlide { display: block !important; visibility: visible !important; opacity: 1 !important; }
+
+/* ============================================================
+   AISIN: メガメニューは「ホバー(.megaOpen)時のみ」開く。
+   現在ページ由来の tabActive/tbWideActive/tabDefault（main.jsが付与）では開かない
+   → ごあいさつ/会社概要等へ遷移後に開きっぱなしになる不具合の根本対応
+   ============================================================ */
+@media only screen and (min-width: 768px){
+  .megaNavParent > li.tabActive:not(.megaOpen) > .megaNavSlide,
+  .megaNavParent > li.tbWideActive:not(.megaOpen) > .megaNavSlide {
+    visibility: hidden !important;
+    opacity: 0 !important;
+  }
+}
+/* バックドロップ(::before)は megaOpen が存在する時だけ表示。current由来では出さない（全幅） */
+body:not(:has(.megaNavParent > li.parent.megaOpen))::before {
+  opacity: 0 !important;
+  visibility: hidden !important;
 }

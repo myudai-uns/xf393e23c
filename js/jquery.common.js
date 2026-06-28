@@ -124,10 +124,20 @@ $(function(){
 $(function(){
     var $items = $('.megaNavParent > li.parent');
     if(!$items.length) return;
-    $items.removeClass('tabActive tbWideActive');
+    // ページ読込時は必ず閉じた状態にする（遷移直後にメニュー/バックドロップが残らないように）
+    $items.removeClass('tabActive tbWideActive megaOpen');
+
+    // ロード直後（遷移直後）はカーソルがナビ上にあっても開かない。
+    // ユーザーが実際にマウスを動かして初めて hover を有効化する。
+    var armed = false;
+    $(document).one('mousemove', function(){ armed = true; });
 
     // When cursor enters a parent: mark it as currently-open, clear siblings.
+    // 【仕様分離】スマホ(≤767)では megaOpen を発動させない＝他項目を消さず全項目を常時表示。
+    //           タブレット/PC(≥768)は従来どおり（ホバーで該当だけ展開・他は消えてOK）。
     $items.on('mouseenter', function(){
+        if(!armed) return;
+        if(window.innerWidth < 768) return;
         $items.removeClass('megaOpen');
         $(this).addClass('megaOpen');
     });
@@ -135,6 +145,11 @@ $(function(){
     // When cursor leaves the entire header (.drawerMenu/.globalHeader): clear all.
     $('.drawerMenu, .globalHeader').on('mouseleave', function(){
         $items.removeClass('megaOpen');
+    });
+
+    // クリックでページ遷移する際はメガメニューを閉じる（megaOpen/バックドロップを残さない）
+    $('.megaNav').on('click', 'a[href]', function(){
+        $items.removeClass('megaOpen tabActive tbWideActive');
     });
 });
 
