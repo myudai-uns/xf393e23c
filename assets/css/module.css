@@ -58,3 +58,11 @@ body#module {}
   .drawerMenu .snsVox { padding-left: 24px !important; padding-right: 24px !important; box-sizing: border-box; }
   .drawerMenu .megaNavParent > li > a { padding-left: 24px !important; padding-right: 24px !important; box-sizing: border-box; }
 }
+
+/* AISIN: ドロワー最下部SNSを左寄せ（左72pxにOfficial SNS→24px→IG→24px→TikTok） */
+@media only screen and (max-width: 768px){
+  .drawerMenu .megaNav .snsVox{ display:flex !important; flex-direction:row !important; align-items:center; justify-content:flex-start; gap:24px; padding-left:72px !important; padding-right:24px !important; text-align:left; }
+  .drawerMenu .megaNav .snsTtl{ margin:0 !important; white-space:nowrap; font-size:15px !important; }
+  .drawerMenu .megaNav .snsList{ justify-content:flex-start !important; width:auto !important; gap:24px; margin:0 !important; }
+  .drawerMenu .megaNav .snsList li{ margin:0 !important; }
+}
