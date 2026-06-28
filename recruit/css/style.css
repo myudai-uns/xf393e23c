@@ -1876,11 +1876,11 @@ body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: transla
   /* メニュー開時はヘッダーを濃色にして白ロゴ・×を視認可能に */
   body.rwd .site-header:has(#navToggle:checked) { background: var(--c-dark); }
   /* 下部：ENTRY / SNS / コーポレートサイト（中央寄せ） */
-  body.rwd .nav-extra { display: flex; flex-direction: column; align-items: center; gap: 20px; margin-top: 30px; padding: 0 26px; }
-  body.rwd .nav-entry { background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .24em; font-size: 16px; padding: 15px 72px; border-radius: 30px; }
-  body.rwd .nav-sns { display: flex; gap: 26px; }
-  body.rwd .nav-sns a { width: 30px; height: 30px; display: flex; }
-  body.rwd .nav-sns a svg { width: 28px; height: 28px; fill: var(--c-dark); }
+  body.rwd .nav-extra { display: flex; flex-direction: column; align-items: center; gap: 34px; margin-top: 40px; padding: 0 26px; }
+  body.rwd .nav-entry { background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .2em; font-size: 36px; padding: 22px 56px; border-radius: 44px; }
+  body.rwd .nav-sns { display: flex; gap: 48px; }
+  body.rwd .nav-sns a { width: 70px; height: 70px; display: flex; }
+  body.rwd .nav-sns a svg { width: 70px; height: 70px; fill: var(--c-dark); }
   body.rwd .nav-corp { color: var(--c-dark); font-size: 13px; font-weight: 700; text-decoration: underline; }
 
   /* 本文：1カラム・余白小・フォント縮小・両端揃え解除 */

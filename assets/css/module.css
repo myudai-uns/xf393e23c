@@ -52,3 +52,9 @@ body#module {}
 /* AISIN: ハンバーガー内SNSを中央寄せ（端から端→中央） */
 .drawerMenu .megaNav .snsList { justify-content: center !important; width: 100% !important; }
 .drawerMenu .megaNav .snsVox { text-align: center; }
+
+/* AISIN: ハンバーガー最下部のリンク/SNSにページ端の余白を確保 */
+@media only screen and (max-width: 768px){
+  .drawerMenu .snsVox { padding-left: 24px !important; padding-right: 24px !important; box-sizing: border-box; }
+  .drawerMenu .megaNavParent > li > a { padding-left: 24px !important; padding-right: 24px !important; box-sizing: border-box; }
+}
