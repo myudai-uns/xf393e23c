@@ -23,12 +23,23 @@ document.addEventListener('DOMContentLoaded', () => {
         carousel.appendChild(cl);
       });
       const cards = [...carousel.querySelectorAll('.iv-card')];
-      const NORMAL = 302, FEAT = 322, GAP = 34;
+      let NORMAL = 302, FEAT = 322, GAP = 34;  // 実寸を測って上書き（SP/PCのCSS差=vwに追従し、写真を必ず画面中央へ）
       let active = N + 2;
       let timer = null, busy = false;
       const setTrans = (on) => {
         carousel.style.transition = on ? '' : 'none';
         cards.forEach(c => { c.style.transition = on ? '' : 'none'; });
+      };
+      const measureDims = () => {
+        setTrans(false);
+        cards.forEach((c, i) => c.classList.toggle('featured', i === active));
+        void carousel.offsetWidth; // 強制リフローして実寸確定
+        const cs = getComputedStyle(carousel);
+        GAP = parseFloat(cs.columnGap || cs.gap) || GAP;
+        FEAT = cards[active].getBoundingClientRect().width || FEAT;
+        const nf = cards.find((c, i) => i !== active);
+        NORMAL = nf ? nf.getBoundingClientRect().width : FEAT;
+        setTrans(true);
       };
       const place = () => {
         cards.forEach((c, i) => c.classList.toggle('featured', i === active));
@@ -60,7 +71,8 @@ document.addEventListener('DOMContentLoaded', () => {
       document.querySelector('.carousel-btn.next')?.addEventListener('click', () => { if (!busy) { go(active + 1); play(); } });
       wrap.addEventListener('mouseenter', stop);
       wrap.addEventListener('mouseleave', play);
-      window.addEventListener('resize', place);
+      window.addEventListener('resize', () => { measureDims(); place(); });
+      measureDims();
       place();
       play();
     }

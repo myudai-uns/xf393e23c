@@ -2158,3 +2158,8 @@ body.rwd .recruit-entry-btn a { width: min(645px, 90vw); }
   body.rwd .page-hero--full .hero-bg,
   body.rwd .page-hero--raw .hero-bg { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; transform: none !important; }
 }
+
+/* スマホ：社員インタビュー(INTERVIEW)カルーセルの左右矢印を非表示 */
+@media (max-width: 767px){
+  body.rwd .top-interview .carousel-btn { display: none !important; }
+}
