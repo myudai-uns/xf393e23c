@@ -4104,3 +4104,14 @@ body.home #movie .is-visible {
   .megaNavParent > li:hover > .megaNavSlide,
   .megaNavParent > li:hover li:hover > .megaNavSlide { display: none !important; }
 }
+
+/* AISIN: ハンバーガー/メガナビでホバー時に他項目が消える・片方だけ表示される挙動を完全無効化（全項目を常時表示） */
+.megaNavParent > li,
+.megaNavParent > li > a { opacity: 1 !important; visibility: visible !important; }
+@media only screen and (min-width: 961px){
+  .megaNavParent > li:hover > .megaNavSlide,
+  .megaNavParent > li:hover li:hover > .megaNavSlide { display: none !important; visibility: hidden !important; opacity: 0 !important; }
+}
+@media only screen and (max-width: 960px){
+  .drawerMenu .megaNavParent > li > .megaNavSlide { display: block !important; visibility: visible !important; opacity: 1 !important; }
+}

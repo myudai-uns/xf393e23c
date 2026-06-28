@@ -957,11 +957,12 @@ ul, ol { list-style: none; }
   margin: 56px 0 0;
   display: flex;
   align-items: stretch;  /* 写真の縦幅を文字領域の縦幅に完全一致させる */
+  position: relative;    /* 番号(pi-num)をページ中央基準に配置するため */
 }
 .process-item .pi-img {
   width: 622px;
   flex-shrink: 0;
-  position: relative;
+  position: static;      /* pi-num は process-item 基準で中央に置く */
 }
 .process-item .pi-img img {
   width: 100%; height: 100%;
@@ -994,8 +995,9 @@ ul, ol { list-style: none; }
   z-index: 2;
   text-shadow: 0 3px 18px rgba(0,0,0,.45);
 }
-.process-item:not(.reverse) .pi-num { left: 581px; right: auto; transform: translateX(-50%); }
-.process-item.reverse .pi-num { right: auto; left: 42px; transform: translateX(-50%); }
+/* 番号はreverseに関わらずページ中央に */
+.process-item:not(.reverse) .pi-num,
+.process-item.reverse .pi-num { left: 50%; right: auto; transform: translateX(-50%); }
 .process-item:first-of-type .pi-num { letter-spacing: 0.07em; }
 .process-item h3 {
   position: relative;
@@ -1817,7 +1819,7 @@ body.rwd .nav-toggle {
   display: none;
   flex-direction: column; justify-content: center; gap: 5px;
   width: 40px; height: var(--header-h);
-  margin-left: auto; margin-right: 14px;
+  margin-left: auto; margin-right: 4px;
   cursor: pointer;
 }
 body.rwd .nav-toggle span { display: block; width: 24px; height: 2px; background: #fff; transition: transform .3s, opacity .3s; }
@@ -1855,7 +1857,7 @@ body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: transla
   body.rwd .header-left { padding-left: 14px; gap: 8px; }
   body.rwd .header-logo img { height: 34px; }
   body.rwd .header-site { display: none; }
-  body.rwd .header-entry { width: 58px; font-size: 10.5px; letter-spacing: .06em; }
+  body.rwd .header-entry { width: 58px; font-size: 10.5px; letter-spacing: .06em; margin-left: 7px; }
 
   /* ハンバーガー：画面いっぱいの全画面メニュー（項目→ENTRY→SNS→コーポレートサイト） */
   body.rwd .nav-toggle { display: flex; }
@@ -1877,7 +1879,7 @@ body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: transla
   body.rwd .site-header:has(#navToggle:checked) { background: var(--c-dark); }
   /* 下部：ENTRY / SNS / コーポレートサイト（中央寄せ） */
   body.rwd .nav-extra { display: flex; flex-direction: column; align-items: center; gap: 34px; margin-top: 40px; padding: 0 26px; }
-  body.rwd .header-nav a.nav-entry { display: block; width: min(90vw, 440px); box-sizing: border-box; text-align: center; background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .12em; font-size: 50px !important; padding: 38px 0 !important; border-radius: 60px; }
+  body.rwd .header-nav a.nav-entry { display: inline-block; width: auto; box-sizing: border-box; text-align: center; background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .12em; font-size: 50px !important; padding: 13px 18px !important; border-radius: 0; }
   body.rwd .header-nav a.nav-corp { font-size: 13px !important; padding: 0 !important; }
   body.rwd .nav-sns { display: flex; gap: 48px; }
   body.rwd .nav-sns a { width: 70px; height: 70px; display: flex; }
@@ -2143,3 +2145,16 @@ body.rwd .recruit-entry-btn a { width: min(645px, 90vw); }
 .footer-corp .fc-head { font-family: var(--font-din); font-size: 12px; letter-spacing: .12em; color: rgba(255,255,255,.6); }
 .footer-corp a { color: #fff; font-size: 13px; font-weight: 700; letter-spacing: .04em; }
 .footer-corp a:hover { opacity: .7; }
+
+/* ============================================================
+   スマホ：全ページのヒーローをworking同様の cover 表示で統一。
+   高さは work(382px) の半分=191px。横フィット(contain)をやめ写真を大きく充填
+   ============================================================ */
+@media (max-width: 767px){
+  body.rwd .page-hero,
+  body.rwd .page-hero--full,
+  body.rwd .page-hero--raw { height: 191px !important; overflow: hidden !important; }
+  body.rwd .page-hero .hero-bg,
+  body.rwd .page-hero--full .hero-bg,
+  body.rwd .page-hero--raw .hero-bg { position: absolute !important; inset: 0 !important; width: 100% !important; height: 100% !important; object-fit: cover !important; transform: none !important; }
+}
