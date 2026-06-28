@@ -48,3 +48,7 @@ body#module {}
 /* AISIN: フッター項目の間隔を確保（くっつき解消） */
 #footer .footList li { margin: 6px 26px 10px 0 !important; }
 #footer .snsList { gap: 14px; }
+
+/* AISIN: ハンバーガー内SNSを中央寄せ（端から端→中央） */
+.drawerMenu .megaNav .snsList { justify-content: center !important; width: 100% !important; }
+.drawerMenu .megaNav .snsVox { text-align: center; }
