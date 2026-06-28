@@ -4079,3 +4079,10 @@ body.home #movie .is-visible {
   .drawerMenu .megaNav .snsList{ justify-content:flex-start !important; width:auto !important; gap:24px !important; margin:0 !important; }
   .drawerMenu .megaNav .snsList li{ margin:0 !important; width:auto !important; }
 }
+
+/* AISIN: ハンバーガーのアコーディオン廃止＝常時全展開＋ +/- アイコン撤去（モバイル≤960） */
+@media only screen and (max-width: 960px){
+  .megaNavParent > li.parent > a,
+  .megaNavParent > li.parent.spActive > a { background-image: none !important; }
+  .megaNavParent > li > .megaNavSlide { display: block !important; }
+}

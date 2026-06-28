@@ -1877,7 +1877,8 @@ body.rwd #navToggle:checked ~ .nav-toggle span:nth-child(3) { transform: transla
   body.rwd .site-header:has(#navToggle:checked) { background: var(--c-dark); }
   /* 下部：ENTRY / SNS / コーポレートサイト（中央寄せ） */
   body.rwd .nav-extra { display: flex; flex-direction: column; align-items: center; gap: 34px; margin-top: 40px; padding: 0 26px; }
-  body.rwd .nav-entry { background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .2em; font-size: 36px; padding: 22px 56px; border-radius: 44px; }
+  body.rwd .header-nav a.nav-entry { display: block; width: min(90vw, 440px); box-sizing: border-box; text-align: center; background: var(--c-blue); color: #fff; font-family: var(--font-futura); font-weight: 600; letter-spacing: .12em; font-size: 50px !important; padding: 38px 0 !important; border-radius: 60px; }
+  body.rwd .header-nav a.nav-corp { font-size: 13px !important; padding: 0 !important; }
   body.rwd .nav-sns { display: flex; gap: 48px; }
   body.rwd .nav-sns a { width: 70px; height: 70px; display: flex; }
   body.rwd .nav-sns a svg { width: 70px; height: 70px; fill: var(--c-dark); }
